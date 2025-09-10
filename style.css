@@ -1,12 +1,12 @@
 html, body{
     background-color: black;
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lato';
 }
 
 header{
     background-color: rgb(255, 255, 255);
-    height: 100px;
+    height: 120px;
     width: 100%;
     align-items: center;
 }
@@ -23,42 +23,57 @@ header{
     height: 65px;
 }
 
+.logonaam p{
+    font-size: 35px;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: -7px;
+}
+
+.logonaam img{
+    width: 70px;
+    height: 15px;
+    margin-left: 93px;
+}
+
 .logo p{
     color: rgb(185, 125, 70);
-    margin-top: 30px;
-    font-size: 15px;
-    padding-left: 3px;
-    
+    margin-top: 27px;
 }
 
 .streep p{
     font-size: 20px;
     font-weight: bold;
+    margin-top: 37px;
 }
 
 .bioscoop-naam p{
-    margin-top: 35px;
+    margin-top: 40px;
     padding-left: 6px;
+    font-weight: bold;
 }
 
 .button-container{
     display: flex;
     justify-content: end;
-    padding-right: 100px;
-    padding-top: 35px;
-    margin-bottom: 35px;
+    padding-top: 52px;
+    margin-right: 100px;
+    
 }
 
 button{
     border: 0;
     background-color: white;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: "Lato";
 }
 
 .stroke{
     background-color: rgb(185, 125, 70);
     padding: 3px;
-    margin-top: 47px;
+    margin-top: 45px;
 }
 
 ul{

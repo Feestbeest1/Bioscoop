@@ -22,3 +22,7 @@ include("header.php");
     </div>
     <div class="trailer"></div>
 </div>
+
+<?php 
+   include 'footer.php';
+?>

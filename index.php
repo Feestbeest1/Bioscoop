@@ -1,6 +1,5 @@
 <?php 
    include 'header.php';
-   include 'footer.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,3 +19,7 @@
 
 </body>
 </html>
+
+<?php 
+   include 'footer.php';
+?>

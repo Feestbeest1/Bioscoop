@@ -1,5 +1,6 @@
 <header>
-    <div class="logo">
+<div class="logo">
+    <a href="http://localhost/Bioscoop" class="overlay-button"></a>
         <img src="img/logo.jpeg" alt="logo">
     <div class="logonaam">
         <p>AnnexBios</p>
@@ -11,7 +12,7 @@
     <div class="bioscoop-naam">
         <p>Hellevoetsluis</p>
     </div>
-    </div>
+  </div>
 
     <div class="button-container">
         <button>FILM AGENDA</button>

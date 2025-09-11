@@ -11,8 +11,19 @@ header{
     align-items: center;
 }
 
+.logo a {
+  position: absolute;                
+  transform: translate(-50%, -50%);
+  background: transparent;           
+  padding: 40px 110px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 116px;
+  margin-top: 40px;
+}
+
 .logo{
-    padding-left: 100px;
+    margin-left: 100px;
     padding-top: 10px;
     float: left;
     margin-top: 5px;
@@ -162,7 +173,7 @@ li{
     background-color: rgb(255, 255, 255);
     margin-top: 50px;
     width: 55%;
-    height: 600px;
+    height: 640px;
     padding: 20px;
 }
 
@@ -186,9 +197,9 @@ li{
     background-color:rgb(185, 125, 70);
     height: 600px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 150px;
 }
-
+/*einde film detailpagina*/
 
 #Film-agenda-box{
     background-color: white;
@@ -234,7 +245,6 @@ body {
 }
 
 .footer {
-    padding: 0;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -244,8 +254,6 @@ body {
     min-width: 100vw;
     height: auto;
     min-height: 40%;
-    position: fixed;
-    left: 0;
     bottom: 40px;
     overflow: hidden;
 }
@@ -360,7 +368,6 @@ body {
     justify-content: flex-start;
     color: white;
     display: flex;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100vw;

@@ -1,7 +1,6 @@
 <?php 
    include 'header.php';
    include 'filmagenda.php';
-   include 'footer.php';
 ?>
 
 <!DOCTYPE html>

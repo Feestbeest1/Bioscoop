@@ -1,5 +1,7 @@
 html, body{
-    background-image: url(assets/header/header_afbeelding.jpg);
+     background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('assets/header/header_afbeelding.jpg');
     background-color: black;
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -129,11 +131,14 @@ li{
 
 label{
     color: #B97D46;
+    display: flex;
 }
 
 #film-agendaContainer{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .box{
@@ -149,6 +154,14 @@ label{
 .column{
     float: left;
     width: 80%;
+    margin-top: 68px;
+    margin-left: 300px;
+}
+
+#arrow{
+    width: 20px;
+    height: auto;
+    padding-left: 10px;
 }
 
 /*Einde film agenda*/

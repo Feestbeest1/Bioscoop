@@ -55,6 +55,7 @@
     </div>
     <div id="film-filter">
     <div class="row">
+        <i class="material-icons">icon</i>
         <div class="box">
             <label>
                 <input type="radio" name="film-filter" id="week">

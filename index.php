@@ -49,20 +49,35 @@
     <div id="Film-agenda-box">
         <div id="film-text">Film Agenda</div>
     </div>
+    <br>
+    <br>
+    <br>
     <div id="film-filter">
-        <div class="row">
-            <div class="box">
-        <input type="radio" id="films"><label for="films"></label><h2>Films</h2></label>
-            </div>
-             <div class="box">
-                <h2>Deze week</h2>
-            </div>
-             <div class="box">
-                <h2>Vandaag</h2>
-            </div>
-             <div class="box">
-                <h2>Categorie</h2>
-            </div>
+    <div class="row">
+        <div class="box">
+            <h2>Films</h2>
+        </div>
+        <div class="box">
+            <label>
+                <input type="radio" name="film-filter" id="week">
+                Deze week
+            </label>
+        </div>
+        <div class="box">
+            <label>
+                <input type="radio" name="film-filter" id="vandaag">
+                Vandaag
+            </label>
+        </div>
+        <div class="box">
+            <label>
+                <input type="radio" name="film-filter" id="categorie">
+                Categorie <img src="assets/icons/arrow_dropdown.svg">
+            </label>
+        </div>
+    </div>
+</div>
+
             
         </div>
     </div>

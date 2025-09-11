@@ -5,7 +5,7 @@ html, body{
 
 @font-face{
   font-family: 'Playfair Display';
-  src: url('assets/fonts/AbadiMT.ttf') format('truetype');
+  src: url('fonts/AbadiMT.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -80,9 +80,9 @@ p{
     padding-left: 10px;
 }
 #welkomsblok h1{
+    color: white;
     display: flex;
     text-align: left;
-    color: white;
     font-family: 'Playfair Display';
     letter-spacing: 2px;
 }
@@ -97,4 +97,49 @@ p{
     height: 45px;
     width: 220px;
     color: #B97D46;
+}
+
+/* kaartblok */
+#contactblok{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#kaartblok{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 80%;
+    margin-top: 40px;
+    height: 555px;
+    padding-left: 10px;
+}
+
+#googlemap{
+    margin: 30px;
+}
+
+.google-maps{
+    display: flex;
+    flex-direction: column;
+}
+
+#infoblok{
+    background-color: #B97D46;
+    width: 423px;
+    color: white;
+    margin-left: 30px;
+    padding: 20px;
+    font-family: 'Playfair Display';
+}
+
+#fotoblok {
+    width: 40%;
+}
+
+#fotoblok img {
+    width: 100%;
+    height: auto;
+    display: block;
 }

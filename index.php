@@ -1,5 +1,7 @@
 <?php 
    include 'header.php';
+   include 'filmagenda.php';
+   include 'footer.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +17,6 @@
 </head>
 <body>
 
-    <div id="Film-agenda-box">Film Agenda</div>
 
 </body>
 </html>

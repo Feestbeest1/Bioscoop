@@ -35,10 +35,20 @@
         </div>
     </div>
         </div>
-        <div class="column"></div>
+        <div class="column">
+           
     </div>
 </div>
 </div>
+      <div id="filmsContainer">
+         <div id="film-box"></div>
+         <div id="film-box"></div>
+         <div id="film-box"></div>
+         <div id="film-box"></div>
+         <div id="film-box"></div>
+         <div id="film-box"></div>
             
+        </div>
+      </div>      
         </div>
     </div>

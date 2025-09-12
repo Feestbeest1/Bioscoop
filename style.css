@@ -436,3 +436,76 @@ body {
     height: auto;
     z-index: 0;
 }
+
+/*Begin film agenda*/
+#Film-agenda-box{
+    background-color: white;
+    width: 710px;
+    height: 100px;
+    
+}
+
+#film-text{
+    color: #B97D46;
+    font-size: 50px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+label{
+    color: #B97D46;
+    display: flex;
+}
+
+#film-agendaContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.box{
+    width: auto;
+    height: 30px;
+    background-color: white;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-right: 8px;
+    font-weight: bold;
+}
+
+.column{
+    width: 80%;
+    height: auto;
+    margin-top: 68px;
+    margin-left: 230px;
+}
+
+#arrow{
+    width: 20px;
+    height: auto;
+    padding-left: 10px;
+}
+
+#film-box{
+    height: 550px;
+    width: 230px;
+    background-color: white;
+
+}
+
+#filmsContainer{
+    margin-left: 230px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+/*Einde film agenda*/

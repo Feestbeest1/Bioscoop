@@ -1,14 +1,8 @@
+style.css
 html, body{
     background-color: black;
     margin: 0;
     font-family: "Lato";
-}
-
-@font-face{
-  font-family: 'Playfair Display';
-  src: url('fonts/AbadiMT.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 header{
@@ -303,16 +297,216 @@ body {
 
 .footer_text_2_big{
     color: white;
-
-    font-weight: 550;
-    margin-top: 0;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.bestel-tickets{
+.footer_container_1 {
+    align-items: start;
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
+    min-width: 33%;
+    width: 30%;
+    height: auto;
+    padding-left: 7%;
+    padding-right: 3%;
+}
 
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 20px;
-    padding-right: 20px;
+.footer_container_2 {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+
+.footer_container_3 {
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 33%;
+    width: auto;
+    height: auto;
+}
+
+.footer_button{
+    font-family: 'Lato', sans-serif;
+    border: none;
+    padding: 5px;
+    color: #666666;
+    background-color: aliceblue;
+    width: auto;
+    min-width: 40px;
+    max-width: 100px;
+    min-width: 30%;
+    min-height: 20%;
+}
+
+.footer_button:hover{
+    background-color: lightgrey;
     cursor: pointer;
 }
+
+.footer_button:active{
+    background-color: grey;
+}
+
+.footer_socials_img{
+    min-width: 30px;
+    max-width: 40px;
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+}
+
+.footer_bar {
+    padding-left: 10vw;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 40px;
+    background: black;
+    z-index: 999;
+}
+
+
+@media (max-width: 600px) {
+    .footer {
+        width: 100vw;
+        min-width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        min-height: 50%;
+        overflow-x: hidden;
+    }
+
+    .footer_container_1 {
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+        min-width: 100%;
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .footer_button{
+        padding-bottom: 10px;
+    }
+
+    .footer_text_1{
+        font-size: 13px;
+        max-width: 80%;
+    }
+
+    .footer_logo_img {
+        min-width: 100px;
+        max-width: 80%;
+    }
+
+    .footer_text_2_big{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .footer_text_2{
+        margin-top: 0;
+        font-size: 12px;
+    }
+
+}
+
+.footer_bg_img {
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    min-width: 200px;
+    max-width: 400px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    z-index: 0;
+}
+
+/*Begin film agenda*/
+#Film-agenda-box{
+    background-color: white;
+    width: 710px;
+    height: 100px;
+    
+}
+
+#film-text{
+    color: #B97D46;
+    font-size: 50px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+label{
+    color: #B97D46;
+    display: flex;
+}
+
+#film-agendaContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.box{
+    width: auto;
+    height: 30px;
+    background-color: white;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-right: 8px;
+    font-weight: bold;
+}
+
+.column{
+    width: 80%;
+    height: auto;
+    margin-top: 68px;
+    margin-left: 230px;
+}
+
+#arrow{
+    width: 20px;
+    height: auto;
+    padding-left: 10px;
+}
+
+#film-box{
+    height: 550px;
+    width: 230px;
+    background-color: white;
+
+}
+
+#filmsContainer{
+    margin-left: 230px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+/*Einde film agenda*/

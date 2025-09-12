@@ -134,12 +134,14 @@ p{
     font-family: 'Playfair Display';
 }
 
-#fotoblok {
+/* #fotoblok {
     width: 40%;
+    display: flex;
+    flex-direction: row;
 }
 
 #fotoblok img {
     width: 100%;
     height: auto;
     display: block;
-}
+} */

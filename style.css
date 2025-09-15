@@ -630,3 +630,12 @@ label{
 }
 
 /*Einde film agenda*/
+
+/* begin bestelpagina */
+#kopbalkbestel{
+    display: flex;
+    background-color: white;
+    color: #B97D46;
+    width: 75%;
+    height: 100px;
+}

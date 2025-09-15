@@ -224,6 +224,33 @@ li{
     height: auto;
     display: block;
 }
+@media (max-width: 814px){
+    #welkomsblok h1{
+        color: white;
+        display: flex;
+        text-align: left;
+        font-family: 'Lato';
+        letter-spacing: 2px;
+        font-size: 20px;
+    }
+        #welkomsblok h4{
+        color: white;
+        width: 500px;
+        font-family: 'Lato';
+        font-size: 10px;
+        display: flex;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 550px) {
+    #welkomsblok button{
+        height: 45px;
+        width: 220px;
+        color: #B97D46;
+    }
+}
+/* einde homepagina welkomsblok */
 
 /*Film detailpagina*/
 .film-info{

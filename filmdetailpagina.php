@@ -1,5 +1,6 @@
 <?php
-include("header.php");
+include("includes/header.php");
+include("includes/topbar.php");
 ?>
 <link rel="stylesheet" href="style.css">
 
@@ -24,5 +25,5 @@ include("header.php");
 </div>
 
 <?php 
-   include 'footer.php';
+   include("includes/footer.php");
 ?>

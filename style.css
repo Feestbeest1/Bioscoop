@@ -194,7 +194,7 @@ li{
 .google-maps{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 630px;
 }
 
 #googlemap{
@@ -212,16 +212,18 @@ li{
     }
 
     #fotoblok {
-    width: 40%;
+    /* width: 470px;
+    padding-right: 10px; */
     display: flex;
     align-items: center;
     justify-content: center;
     }
 
     #fotoblok img {
-    width: 500px;
-    margin-right: 68px;
-    height: auto;
+    width: 466px;
+    height: 419px;
+    padding-right: 20px;
+    padding-top: 7px;
     display: block;
 }
 @media (max-width: 814px){
@@ -241,6 +243,28 @@ li{
         display: flex;
         max-width: 200px;
     }
+
+    #kaartblok{
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        width: 78%;
+        margin-top: 40px;
+        height: 815px;
+        padding: 4px;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding-left: 15px;
+    }
+    #fotoblok img{
+        width: 285px;
+        height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+    }
 }
 
 @media (max-width: 550px) {
@@ -250,6 +274,33 @@ li{
         color: #B97D46;
     }
 }
+
+@media (max-width: 1000px){
+    .google-maps{
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+    }
+
+    #infoblok {
+        background-color: #B97D46;
+        color: white;
+        margin-left: 30px;
+        width: 220px;
+        height: 188px;
+        font-family: 'Lato';
+    }
+}
+/* 
+@media (max-width: 953px){
+        #fotoblok img{
+        width: 366px;
+        height: 419px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+} */
 /* einde homepagina welkomsblok */
 
 /*Film detailpagina*/

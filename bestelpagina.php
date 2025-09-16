@@ -4,7 +4,10 @@
 ?>
 
 <body>
-    <div id="kopbalkbestel">TICKETS BESTELLEN</div>
+<div id="kbbestel">
+    <h1>TICKETS BESTELLEN</h1>
+</div>
+
 </body>
 
 <?php 

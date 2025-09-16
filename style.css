@@ -683,10 +683,16 @@ label{
 /*Einde film agenda*/
 
 /* begin bestelpagina */
-#kopbalkbestel{
-    display: flex;
-    background-color: white;
+#kbbestel h1{
     color: #B97D46;
-    width: 75%;
+    padding-left: 10px;
+}
+#kbbestel{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: white;
+    margin: 135px auto 0 auto;
+    width: 78%;
     height: 100px;
 }

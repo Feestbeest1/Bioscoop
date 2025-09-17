@@ -1,5 +1,9 @@
 style.css
 html, body{
+    
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("assets/header/header_afbeelding.jpg");
+    background-repeat: no-repeat;
     background-color: black;
     margin: 0;
     font-family: "Lato";
@@ -534,7 +538,7 @@ body {
 /*Begin film agenda*/
 #Film-agenda-box{
     background-color: white;
-    width: 710px;
+    width: 86%;
     height: 100px;
     
 }
@@ -575,31 +579,62 @@ label{
 }
 
 .column{
-    width: 80%;
-    height: auto;
-    margin-top: 68px;
-    margin-left: 230px;
+    width: 45%;
+    height: 160px;
+    margin-top: 10%;
+    margin-left: 11%;
 }
 
-#arrow{
-    width: 20px;
-    height: auto;
-    padding-left: 10px;
-}
-
-#film-box{
+.film-box{
     height: 550px;
-    width: 230px;
+    width: 16%;
     background-color: white;
 
 }
 
+.categorie-box{
+    width: auto;
+    height: 30px;
+    background-color: white;
+    margin-top: 5px;
+    color: #B97D46;
+    border: 0px;
+    font-size: 14px;
+    font-family: "Lato";
+    font-weight: bold;
+}
+
+#line{
+    width: 35px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px 0;
+}
+
 #filmsContainer{
-    margin-left: 230px;
+    margin-left: 11%;
+    margin-right: 210px;
+    padding-bottom: 60px;
+    /* display: grid; */
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 10px;
-    margin-bottom: 50px;
+    width: 78%;
+}
+
+#bekijk-knop{
+    width: 80%;
+    height: 30px;
+    background-color: B97D46;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    margin-left: 11%;
+}
+
+#button-row{
+    padding-bottom: 60px;
 }
 
 /*Einde film agenda*/

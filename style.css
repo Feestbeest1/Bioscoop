@@ -303,7 +303,7 @@ li{
 } */
 /* einde homepagina welkomsblok */
 
-/*Film detailpagina*/
+/*begin Film detailpagina*/
 .film-info{
     background-color: rgb(0, 0, 0);
     margin-left: 10%;
@@ -330,7 +330,6 @@ li{
 .film-info .content-wrapper {
     display: flex;
     flex-direction: row;
-
     justify-content: space-between;
 }
 
@@ -366,9 +365,17 @@ li{
 
 .trailer{
     background-color:rgb(185, 125, 70);
-    height: 600px;
     margin-top: 20px;
     margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.trailer iframe{
+    width: 99%;
+    height: 98%;
 }
 /*einde film detailpagina*/
 
@@ -688,13 +695,3 @@ label{
     height: 100px;
 }
 
-
-
-
-
-/*Begin Ticket verkoop pagina*/
-
-.header-tickerverkoop{
-    background-color: white;
-    width: 100px;
-}

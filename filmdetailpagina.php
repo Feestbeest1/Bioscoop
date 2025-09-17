@@ -18,9 +18,7 @@ include("includes/topbar.php");
         </div>
     </div>
 
-    <div class="buy-button">
-        <button>KOOP JE TICKETS</button>
-    </div>
+        <a href="bestelpagina.php" class="buy-button">KOOP JE TICKETS</a>
     <div class="trailer"></div>
 </div>
 

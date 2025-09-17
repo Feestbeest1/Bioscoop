@@ -346,7 +346,8 @@ li{
     margin-top: 50px;
     width: 55%;
     height: 640px;
-    padding: 20px;
+    padding-left: 40px;
+    margin-bottom: 10px;
 }
 
 .buy-button{
@@ -356,13 +357,11 @@ li{
     height: 100px;
     display: grid;
     text-align: center;
-}
-
-.buy-button button{
-    background-color: transparent;
     color: white;
-    font-size: 30px;
+    font-size: 40px;
     font-family: "Lato";
+    cursor: pointer;
+    align-items: center;
 }
 
 .trailer{
@@ -687,4 +686,15 @@ label{
     color: #B97D46;
     width: 75%;
     height: 100px;
+}
+
+
+
+
+
+/*Begin Ticket verkoop pagina*/
+
+.header-tickerverkoop{
+    background-color: white;
+    width: 100px;
 }

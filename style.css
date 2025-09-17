@@ -683,16 +683,76 @@ label{
 /*Einde film agenda*/
 
 /* begin bestelpagina */
-#kbbestel h1{
-    color: #B97D46;
-    padding-left: 10px;
+#groepbestelpagina{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 #kbbestel{
     display: flex;
-    align-items: center;
+    /* align-items: center;  */
     justify-content: start;
     background-color: white;
     margin: 135px auto 0 auto;
     width: 78%;
     height: 100px;
+}
+#kbbestel h1{
+    color: #B97D46;
+    padding-left: 10px;
+}
+
+#bestelvlakken{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#witvlakbestel{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 950px;
+    height: 500px;
+    margin-top: 50px;
+    padding: 20px;
+}
+#witvlakbestel h3{
+    color: #B97D46;
+    margin: 0;
+    padding-top: 15px;
+}
+
+#filmselectie{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#filmtitel{
+    display: flex;
+    background-color: white;
+    color: #B97D46;
+    border: 1px solid #B97D46;
+    width: 80px;
+    height: 22px;
+}
+
+.datums{
+    color:#B97D46;
+    border: 1px solid #B97D46;
+    font-size: 15px;
+}
+.tijdstip{
+    color:#B97D46;
+    border: 1px solid #B97D46;
+    font-size: 15px;
+}
+
+#filmkeuze{
+    background-color: white;
+    width: 215px;
+    height: 300px;
+    margin-top: 50px;
 }

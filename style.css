@@ -308,19 +308,19 @@ li{
     background-color: rgb(0, 0, 0);
     margin-left: 10%;
     margin-right: 10%;
+    margin-top: 100px;
 }
 
-.titel-film{
+.Titel-film{
     background-color: white;
     width: 100%;
-    height: 100px;
+    height: 110px;
     margin-top: 150px;
     place-items: left;
-    padding-bottom: 10px;
     margin-bottom: 10px;
 }
 
-.titel-film p{
+.Titel-film p{
     font-size: 50px;
     font-weight: bold; 
     color: rgb(185, 125, 70);
@@ -397,7 +397,6 @@ h2{
 
 /*Footer*/
 * {
-    box-sizing: border-box;
     margin: none;
     padding: none;
 }
@@ -598,7 +597,6 @@ body {
 }
 
 .footer_bg_img {
-    position: absolute;
     right: 0;
     bottom: -10px;
     min-width: 200px;

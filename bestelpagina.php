@@ -37,12 +37,29 @@
 
          <h3>STAP 1: KIES JE TICKET</h3>
 
+            <div>TYPE</div><br>
+
+            <div id="lijn1"></div>
+
+            <div>Normaal</div><br>
+            <div>Kind t/m 11 jaar</div><br>
+            <div>65 +</div>
+
+            <div id="lijn2"></div>
+
+         <div id="ticketinforechts">
+            <div>AANTAL</div>
+
+            
+         </div>
+
       </div>
 
       <div id="filmkeuze"></div>
 
+      
    </div>
-
+   
 </div>
 
 </body>

@@ -722,6 +722,7 @@ label{
     color: #B97D46;
     margin: 0;
     padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 #filmselectie{
@@ -748,6 +749,25 @@ label{
     color:#B97D46;
     border: 1px solid #B97D46;
     font-size: 15px;
+}
+
+#lijn1{
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-bottom: 5px;
+}
+#lijn2{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin-bottom: 5px;
+}
+
+#ticketinforechts{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: flex-end;
 }
 
 #filmkeuze{

@@ -36,22 +36,32 @@
          </div>
 
          <h3>STAP 1: KIES JE TICKET</h3>
+         
+         
+         <div id="ticketinfolinks">
 
-            <div>TYPE</div><br>
+            <div id="ticketinforechts">
 
+               <div>TYPE</div>
+
+                  <div id="tekstenTicket">
+                     <p>PRIJS</p>
+                     <div>AANTAL</div>
+                  </div>
+
+            </div>
             <div id="lijn1"></div>
+            
 
             <div>Normaal</div><br>
             <div>Kind t/m 11 jaar</div><br>
             <div>65 +</div>
 
-            <div id="lijn2"></div>
-
-         <div id="ticketinforechts">
-            <div>AANTAL</div>
-
             
+
+            <div id="lijn2"></div>
          </div>
+
 
       </div>
 

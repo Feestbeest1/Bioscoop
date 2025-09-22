@@ -52,14 +52,72 @@
             </div>
             <div id="lijn1"></div>
             
+            <div id="ticketBox">
 
-            <div>Normaal</div><br>
-            <div>Kind t/m 11 jaar</div><br>
-            <div>65 +</div>
+               <div id=TicketOpties>
+                  <div>Normaal</div><br>
+                  <div>Kind t/m 11 jaar</div><br>
+                  <div>65 +</div>
+               </div>
+               
+               <div id="ticketoptiebox">
+                  <div id="ticketprijzen">
+                     <div>€9,00</div>
+                     <div>€5,00</div>
+                     <div>€7,00</div>
+                  </div>
 
-            
+                  <div id="ticketboxaantallen">
+                     <select class="aantal">
+                        <option class="aantal" selected hidden>0</option>
+                        <option value="aantal">1</option>
+                        <option value="aantal">2</option>
+                        <option value="aantal">3</option>
+                        <option value="aantal">4</option>
+                        <option value="aantal">5</option>
+                        <option value="aantal">6</option>
+                        <option value="aantal">7</option>
+                        <option value="aantal">8</option>
+                        <option value="aantal">9</option>
+                     </select>
 
+                     <select class="aantal">
+                        <option class="aantal" selected hidden>0</option>
+                        <option value="aantal">1</option>
+                        <option value="aantal">2</option>
+                        <option value="aantal">3</option>
+                        <option value="aantal">4</option>
+                        <option value="aantal">5</option>
+                        <option value="aantal">6</option>
+                        <option value="aantal">7</option>
+                        <option value="aantal">8</option>
+                        <option value="aantal">9</option>
+                     </select>
+
+                     <select class="aantal">
+                        <option class="aantal" selected hidden>0</option>
+                        <option value="aantal">1</option>
+                        <option value="aantal">2</option>
+                        <option value="aantal">3</option>
+                        <option value="aantal">4</option>
+                        <option value="aantal">5</option>
+                        <option value="aantal">6</option>
+                        <option value="aantal">7</option>
+                        <option value="aantal">8</option>
+                        <option value="aantal">9</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
             <div id="lijn2"></div>
+
+            <div id="vouchercode">VOUCHERCODE
+            <form action="includes/InsertMovieScreening.php" method="POST">
+               <input type="text" id="voucherbutton" placeholder="code">
+               <input type="submit" value="Toevoegen" id="voucherknop">
+               
+            </form>
+            </div>
          </div>
 
 

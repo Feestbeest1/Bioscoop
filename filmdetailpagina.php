@@ -57,6 +57,19 @@ include("includes/topbar.php");
                 <?php endfor; ?>
             </div>
             <div class="status">Released:&nbsp;<?php echo $movieData["movie"]["status"]; ?></div>
+            <div class="beschrijving"><?php echo $movieData["movie"]["overview"]; ?></div>
+            <div class="genre">Genre:
+                <?php
+                for ($x = 0; $x < count($movieData["movie"]["genres"]); $x++) {
+                    echo $movieData["movie"]["genres"][$x]['name'];
+                     if ($x < count($movieData["movie"]["genres"]) - 1) {
+                    echo ', ';
+                     }
+                }
+                ?>
+            </div>
+            <div class="film-lengte">Filmlengte:&nbsp;<?php echo $movieData["movie"]["runtime"]; ?>minutes</div>
+            <div class="land">Land:<?php echo $movieData["movie"]["origin_country"][0];?></div>
     </div>
 </div>
 

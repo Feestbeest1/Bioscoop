@@ -725,9 +725,9 @@ label{
     flex-direction: column;
     display: flex;
     background-color: white;
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
     height: 100%;
-    padding-left: 5%;
     padding-bottom: 20px;
 }
 
@@ -739,6 +739,15 @@ label{
         padding-bottom: 0px;
     }
 
+    .afrekenen-button{
+        width: 100% !important;
+        height: 15vw !important;
+        font-size: 25px !important;
+        margin-left: 0 !important;
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+    }
+
 }
 
 .form-text{
@@ -747,6 +756,7 @@ label{
     padding: 0px;
     font-weight: bold;
     width: auto;
+    margin-left: 20px;
 }
 
 #form-naam{
@@ -758,13 +768,16 @@ label{
 
 input[type="text"], input[type="email"] {
   border: 2px solid #b97d46;
-  width: 47%;
+  width: 41%;
+  height: 40px;
+  margin-left: 20px;
 }
 
 input[type="email"], input[type="telefoon"] {
     margin-top: 5px;
     width: 97%;
     font-family: 'Lato', sans-serif;
+    margin-left: 20px;
 }
 
 @media (max-width: 600px) {
@@ -801,6 +814,7 @@ input[type="email"], input[type="telefoon"] {
   gap: 24px;
   justify-content: flex-start;
   margin-bottom: 36px; /* spacing after cards */
+  margin-left: 20px;
 }
 
 /* Force voorwaarden below */
@@ -811,6 +825,7 @@ input[type="email"], input[type="telefoon"] {
   margin-top: 32px;       /* space from cards */
   margin-bottom: 0;
   background: transparent;
+  margin-left: 20px;
 }
 
 /* Style inside voorwaarden nicely */
@@ -858,5 +873,19 @@ input[type="email"], input[type="telefoon"] {
     margin-bottom: 0;
     gap: 16px;
   }
+}
+
+.afrekenen-button{
+    background-color: #B97D46;
+    margin-left: 10%;
+    width: 80%;
+    height: 7vw;
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 2vw;
+    margin-bottom: 6vw;
 }
 

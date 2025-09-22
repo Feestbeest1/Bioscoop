@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-row">
-          <input type="email" name="telefoon" placeholder="Telefoon" required class="form-full">
+          <input type="email" name="email_2" placeholder="E-mail" required class="form-full">
         </div>
 
         <p class="form-text">STAP 5: KIES JE BETAALWIJZE</p>
@@ -54,13 +54,17 @@
           </div>
 
           <div class="form-row">
-            <input type="submit" value="Bestel">
+            
           </div>
         </div>
 
       </form>
     </div>
   </div>
+
+
+  <input type="submit" value="AFREKENEN" class="afrekenen-button">
+
 
 </body>
 

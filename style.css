@@ -889,3 +889,89 @@ input[type="email"], input[type="telefoon"] {
     margin-bottom: 6vw;
 }
 
+.kies-je-ticket-container{
+    background-color: white;
+    width: 80%;
+    margin-left: 10%;
+    height: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tickets {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.tickets th,
+.tickets td {
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  color: #797979; /* dark text */
+}
+
+.tickets th {
+  background-color: white;
+  color: #797979;
+}
+
+
+.tickets input[type="number"] {
+  width: 50px;
+  border: 1px solid #B97D46;
+  color: #797979;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.voucher {
+  margin-top: 10px;
+  background-color: white;
+}
+
+.vorm-voucher {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.voucher input {
+  padding: 5px;
+  width: 200px;
+  margin-right: 5px;
+  border: 1px solid #B97D46;
+}
+
+.voucher button {
+  padding: 5px 10px;
+  background-color: #B97D46;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.voucher button:hover {
+  background-color: white;
+  color: #B97D46;
+  border: solid #B97D46 1px;
+}
+
+.voucher input[type="text"] {
+  width: 80%;
+  border: 1px solid #B97D46;
+  padding: 5px;
+}
+
+.Voucher-text{
+    color: #B97D46;
+    font-size: 20px;
+    padding: 0px;
+    font-weight: bold;
+    width: auto;
+    margin-left: 20px;
+    margin-top: 20px;
+}

@@ -333,12 +333,6 @@ li{
 
 .stars-container {
     display: flex;
-    flex-direction: row;
-}
-
-.stars-container .star {
-    width: 40px; 
-    height: 40px;
 }
 
 .star svg {
@@ -351,7 +345,15 @@ li{
 
 .star-filled img {
     transform: scale(0.6);
+    margin-left: -28px;
 }
+
+.star-notfilled img {
+    transform: scale(0.6);
+    margin-left: -28px;
+    stroke-width: 10px;
+}
+
 
 .film-info .content-wrapper {
     display: flex;
@@ -359,11 +361,12 @@ li{
     justify-content: space-between;
 }
 
-.film-info .content-wrapper .afbeelding-film{
-    background-color: #ffffff;
-    margin-top: 50px;
-    width: 39%;
-    height: 640px;
+
+.afbeelding-film img{
+    margin-top: 25px;
+    width: 110%;
+    height: 665px;
+    padding-top: 25px;
 }
 
 .film-info .content-wrapper .information {
@@ -373,6 +376,12 @@ li{
     height: 640px;
     padding-left: 40px;
     margin-bottom: 10px;
+    padding-top: 25px;
+}
+
+.status{
+    font-size: 25px;
+    color: #666666;
 }
 
 .buy-button{

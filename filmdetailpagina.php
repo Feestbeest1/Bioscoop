@@ -28,10 +28,6 @@ $filledStars = round($movieData["movie"]["vote_average"] / 2);
 $stars = 5 - $filledStars;
 $totalStars = 5;
 
-echo $filledStars;
-echo " ";
-echo $stars;
-
 include("includes/header.php");
 include("includes/topbar.php");
 ?>
@@ -43,7 +39,9 @@ include("includes/topbar.php");
         <p><?php echo $movieData["movie"]["title"]; ?></p>
     </div>
     <div class="content-wrapper">
-        <div class="afbeelding-film"></div>
+      <div class="afbeelding-film">
+        <img src="https://image.tmdb.org/t/p/w500<?php echo $movieData["movie"]["poster_path"]; ?>"></img>
+      </div>
         <div class="information">
             <div class="stars-container">
                 <?php for ($i = 0; $i < $totalStars; $i++): ?>
@@ -52,17 +50,13 @@ include("includes/topbar.php");
                             <img src="sterretje.svg" alt="Filled Star">
                     </div>
                     <?php else: ?>
-                        <div class="star notfilled">
-                        <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
-                            <polygon class="star-shape" points="1101.7,524.7 1134.4,530.4 1110,552.9 1114.6,585.8 1085.7,569.5 1055.9,584.1 1062.4,551.5 
-                            1039.3,527.7 1072.3,523.9 1087.8,494.5"/>
-                        </svg>
+                        <div class="star-notfilled">
+                            <img src="sterretje-leeg.svg" alt="Empty Star">
                     </div>
                     <?php endif; ?>
                 <?php endfor; ?>
             </div>
-            <?php echo $movieData["movie"]["vote_average"]; ?> 
-            <div class="status"><?php echo $movieData["movie"]["status"]; ?></div>
+            <div class="status">Released:&nbsp;<?php echo $movieData["movie"]["status"]; ?></div>
     </div>
 </div>
 

@@ -344,14 +344,13 @@ li{
 .star svg {
     transform: scale(20);
     transform-origin: center;
-
     fill: none;
     stroke: gold;
     stroke-width: 2;
 }
 
-.star.filled svg {
-    fill: gold;
+.star-filled img {
+    transform: scale(0.6);
 }
 
 .film-info .content-wrapper {

@@ -1,5 +1,9 @@
 style.css
 html, body{
+    
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("assets/header/header_afbeelding.jpg");
+    background-repeat: no-repeat;
     background-color: black;
     margin: 0;
     font-family: "Lato";
@@ -303,42 +307,66 @@ li{
 } */
 /* einde homepagina welkomsblok */
 
-/*Film detailpagina*/
+/*begin Film detailpagina*/
 .film-info{
     background-color: rgb(0, 0, 0);
     margin-left: 10%;
     margin-right: 10%;
+    margin-top: 100px;
 }
 
-.titel-film{
+.Titel-film{
     background-color: white;
     width: 100%;
-    height: 100px;
+    height: 110px;
     margin-top: 150px;
     place-items: left;
-    padding-bottom: 10px;
     margin-bottom: 10px;
 }
 
-.titel-film p{
+.Titel-film p{
     font-size: 50px;
     font-weight: bold; 
     color: rgb(185, 125, 70);
     padding: 25px;
 }
 
+.stars-container {
+    display: flex;
+}
+
+.star svg {
+    transform: scale(20);
+    transform-origin: center;
+    fill: none;
+    stroke: gold;
+    stroke-width: 2;
+}
+
+.star-filled img {
+    transform: scale(0.6);
+    margin-left: -28px;
+}
+
+.star-notfilled img {
+    transform: scale(0.6);
+    margin-left: -28px;
+    stroke-width: 10px;
+}
+
+
 .film-info .content-wrapper {
     display: flex;
     flex-direction: row;
-
     justify-content: space-between;
 }
 
-.film-info .content-wrapper .afbeelding-film{
-    background-color: #ffffff;
-    margin-top: 50px;
-    width: 39%;
-    height: 640px;
+
+.afbeelding-film img{
+    margin-top: 25px;
+    width: 110%;
+    height: 665px;
+    padding-top: 25px;
 }
 
 .film-info .content-wrapper .information {
@@ -346,7 +374,14 @@ li{
     margin-top: 50px;
     width: 55%;
     height: 640px;
-    padding: 20px;
+    padding-left: 40px;
+    margin-bottom: 10px;
+    padding-top: 25px;
+}
+
+.status{
+    font-size: 25px;
+    color: #666666;
 }
 
 .buy-button{
@@ -356,20 +391,26 @@ li{
     height: 100px;
     display: grid;
     text-align: center;
-}
-
-.buy-button button{
-    background-color: transparent;
     color: white;
-    font-size: 30px;
+    font-size: 40px;
     font-family: "Lato";
+    cursor: pointer;
+    align-items: center;
 }
 
 .trailer{
     background-color:rgb(185, 125, 70);
-    height: 600px;
     margin-top: 20px;
     margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.trailer iframe{
+    width: 99%;
+    height: 98%;
 }
 /*einde film detailpagina*/
 
@@ -397,7 +438,6 @@ h2{
 
 /*Footer*/
 * {
-    box-sizing: border-box;
     margin: none;
     padding: none;
 }
@@ -598,7 +638,6 @@ body {
 }
 
 .footer_bg_img {
-    position: absolute;
     right: 0;
     bottom: -10px;
     min-width: 200px;
@@ -612,7 +651,7 @@ body {
 /*Begin film agenda*/
 #Film-agenda-box{
     background-color: white;
-    width: 710px;
+    width: 86%;
     height: 100px;
     
 }
@@ -653,31 +692,62 @@ label{
 }
 
 .column{
-    width: 80%;
-    height: auto;
-    margin-top: 68px;
-    margin-left: 230px;
+    width: 45%;
+    height: 160px;
+    margin-top: 10%;
+    margin-left: 11%;
 }
 
-#arrow{
-    width: 20px;
-    height: auto;
-    padding-left: 10px;
-}
-
-#film-box{
+.film-box{
     height: 550px;
-    width: 230px;
+    width: 16%;
     background-color: white;
 
 }
 
+.categorie-box{
+    width: auto;
+    height: 30px;
+    background-color: white;
+    margin-top: 5px;
+    color: #B97D46;
+    border: 0px;
+    font-size: 14px;
+    font-family: "Lato";
+    font-weight: bold;
+}
+
+#line{
+    width: 35px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px 0;
+}
+
 #filmsContainer{
-    margin-left: 230px;
+    margin-left: 11%;
+    margin-right: 210px;
+    padding-bottom: 60px;
+    /* display: grid; */
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 10px;
-    margin-bottom: 50px;
+    width: 78%;
+}
+
+#bekijk-knop{
+    width: 80%;
+    height: 30px;
+    background-color: B97D46;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    margin-left: 11%;
+}
+
+#button-row{
+    padding-bottom: 60px;
 }
 
 /*Einde film agenda*/
@@ -698,6 +768,7 @@ label{
     width: 78%;
     height: 100px;
 }
+
 #kbbestel h1{
     color: #B97D46;
     padding-left: 10px;
@@ -841,3 +912,4 @@ label{
     background-color: #B97D46;
     border-color: #B97D46;
 }
+

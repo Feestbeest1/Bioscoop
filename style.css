@@ -361,7 +361,6 @@ li{
     justify-content: space-between;
 }
 
-
 .afbeelding-film img{
     margin-top: 25px;
     width: 110%;
@@ -371,6 +370,7 @@ li{
 
 .film-info .content-wrapper .information {
     background-color: rgb(255, 255, 255);
+    color:#666666;
     margin-top: 50px;
     width: 55%;
     height: 640px;
@@ -381,7 +381,18 @@ li{
 
 .status{
     font-size: 25px;
-    color: #666666;
+}
+
+.info-film{
+    font-weight: bold;
+}
+
+.beschrijving{
+    margin-top: 30px;
+}
+
+.genre{
+    margin-top: 30px;
 }
 
 .buy-button{

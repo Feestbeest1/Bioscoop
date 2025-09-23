@@ -58,18 +58,37 @@ include("includes/topbar.php");
             </div>
             <div class="status">Released:&nbsp;<?php echo $movieData["movie"]["status"]; ?></div>
             <div class="beschrijving"><?php echo $movieData["movie"]["overview"]; ?></div>
+                
+        <div class="info-film">
             <div class="genre">Genre:
                 <?php
                 for ($x = 0; $x < count($movieData["movie"]["genres"]); $x++) {
                     echo $movieData["movie"]["genres"][$x]['name'];
-                     if ($x < count($movieData["movie"]["genres"]) - 1) {
-                    echo ', ';
-                     }
+                    if ($x < count($movieData["movie"]["genres"]) - 1) {
+                        echo ', ';
+                    }
                 }
                 ?>
             </div>
             <div class="film-lengte">Filmlengte:&nbsp;<?php echo $movieData["movie"]["runtime"]; ?>minutes</div>
             <div class="land">Land:<?php echo $movieData["movie"]["origin_country"][0];?></div>
+            <div class="ratings">
+                lmbd score: <?php echo number_format($movieData["movie"]["vote_average"], 1, '.', ''); ?>/10
+            </div>
+            <div class="regiseur">Regisseur:
+                <?php
+                echo implode(
+                    ', ',
+                    array_column($movieData["movie"]["directors"], 'name')
+                );
+                ?>
+            </div>
+            <img src="https://image.tmdb.org/t/p/w500<?php for ($x < count ($movieData["movie"]["profile_path"]); $x++){
+                echo $movieData["movie"]["profile_path"][$x];
+                
+            } ?>"></img>
+        </div>
+
     </div>
 </div>
 

@@ -8,7 +8,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $response = curl_exec($ch);
-
+echo $response;
 if (curl_errno($ch)) {
     exit("Er is iets misgegaan met de API");
 }

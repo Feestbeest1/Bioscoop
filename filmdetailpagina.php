@@ -24,7 +24,9 @@ $movieData = $data['data'];
 curl_close($ch);
 
 
-$stars = round($movieData["movie"]["vote_average"] / 2);
+$filledStars = round($movieData["movie"]["vote_average"] / 2);
+$stars = 5 - $filledStars;
+$totalStars = 5;
 
 include("includes/header.php");
 include("includes/topbar.php");
@@ -37,18 +39,37 @@ include("includes/topbar.php");
         <p><?php echo $movieData["movie"]["title"]; ?></p>
     </div>
     <div class="content-wrapper">
-        <div class="afbeelding-film"></div>
+      <div class="afbeelding-film">
+        <img src="https://image.tmdb.org/t/p/w500<?php echo $movieData["movie"]["poster_path"]; ?>"></img>
+      </div>
         <div class="information">
-            <img src="img/ster.svg" alt="Film Poster" class="film-poster">
-            <img src="img/ster_open.svg" alt="Film Poster" class="film-poster">
-
-            <span class="stars"></span>
-                <span class="stars"></span>
-                <span class="stars"></span>
-                <span class="stars"></span>
-                <span class="stars"></span>
-                <?php echo $movieData["movie"]["vote_average"]; ?> 
-            <div class="status"><?php echo $movieData["movie"]["status"]; ?></div>
+            <div class="stars-container">
+                <?php for ($i = 0; $i < $totalStars; $i++): ?>
+                    <?php if ($i < $filledStars): ?>
+                        <div class="star-filled">
+                            <img src="sterretje.svg" alt="Filled Star">
+                    </div>
+                    <?php else: ?>
+                        <div class="star-notfilled">
+                            <img src="sterretje-leeg.svg" alt="Empty Star">
+                    </div>
+                    <?php endif; ?>
+                <?php endfor; ?>
+            </div>
+            <div class="status">Released:&nbsp;<?php echo $movieData["movie"]["status"]; ?></div>
+            <div class="beschrijving"><?php echo $movieData["movie"]["overview"]; ?></div>
+            <div class="genre">Genre:
+                <?php
+                for ($x = 0; $x < count($movieData["movie"]["genres"]); $x++) {
+                    echo $movieData["movie"]["genres"][$x]['name'];
+                     if ($x < count($movieData["movie"]["genres"]) - 1) {
+                    echo ', ';
+                     }
+                }
+                ?>
+            </div>
+            <div class="film-lengte">Filmlengte:&nbsp;<?php echo $movieData["movie"]["runtime"]; ?>minutes</div>
+            <div class="land">Land:<?php echo $movieData["movie"]["origin_country"][0];?></div>
     </div>
 </div>
 

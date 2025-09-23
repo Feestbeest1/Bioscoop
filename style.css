@@ -762,7 +762,7 @@ label {
 #groepbestelpagina{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
 }
 
 #kbbestel{
@@ -770,8 +770,9 @@ label {
     /* align-items: center;  */
     justify-content: start;
     background-color: white;
-    margin: 135px auto 0 auto;
-    width: 78%;
+    margin-top: 135px;
+    margin-left: 16%;
+    width: 69.5%;
     height: 100px;
 }
 
@@ -784,7 +785,7 @@ label {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    width: 78%;
+    width: 80%;
 }
 
 #witvlakbestel{
@@ -795,6 +796,7 @@ label {
     height: 850px;
     margin-top: 50px;
     padding: 20px;
+    margin-left: 20%;
 }
 #witvlakbestel h3{
     color: #B97D46;
@@ -867,7 +869,7 @@ label {
 #filmkeuze{
     background-color: white;
     width: 215px;
-    height: 300px;
+    height: 400px;
     margin-top: 50px;
 }
 
@@ -914,6 +916,8 @@ label {
 }
 
 #voucherknop{
+    margin-top: 5px;
+    margin-left: 70px;
     width: 180px;
     color:white;
     background-color: #B97D46;
@@ -932,6 +936,264 @@ label {
     align-content: space-between;
     align-items: center;
     flex-direction: column;
+}
+
+/* Force voorwaarden below */
+.voorwaarden-container {
+    clear: both;
+    /* drops below floats */
+    width: 100%;
+    display: block;
+    /* stop flex layout */
+    margin-top: 32px;
+    /* space from cards */
+    margin-bottom: 0;
+    background: transparent;
+    margin-left: 20px;
+}
+
+/* Style inside voorwaarden nicely */
+.voorwaarden-container .form-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.card-option {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 75%;
+    gap: 8px;
+}
+
+.card-img {
+    width: 50px;
+    height: 36px;
+    margin-left: 6px;
+}
+
+@media (max-width: 600px) {
+    .card-select-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .voorwaarden-container {
+        display: flex;
+        margin-top: 0;
+        margin-bottom: 32px;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .voorwaarden-container {
+        margin-top: 32px !important;
+        margin-bottom: 0;
+        gap: 16px;
+    }
+}
+
+.afrekenen-button {
+    background-color: #B97D46;
+    margin-left: 10%;
+    width: 80%;
+    height: 7vw;
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 2vw;
+    margin-bottom: 6vw;
+}
+
+.naam-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    width: 100%;
+}
+
+.naam-grid input[type="text"] {
+    border-radius: 0;
+    margin: 3px;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .naam-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .naam-grid input[type="text"] {
+        width: 50%;
+    }
+}
+
+.naam-grid-container {
+    width: 100%;
+    margin-left: 5%;
+}
+
+.kleine-image-container {
+    background-color: white;
+    height: 500px;
+    width: 215px;
+    display: flex;
+    flex-direction: column;
+}
+
+.kleine_image {
+    width: 100%;
+    height: 60%;
+}
+
+.kleine-image-titel {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 1vw;
+    margin: 0px;
+    color: #666666;
+}
+
+.kleine-image-stars {
+    width: 100%;
+    height: 2vw;
+    min-height: 2vw;
+    background-color: white;
+}
+
+.kleine-image-release {
+    padding-left: 10%;
+    justify-self: center;
+    align-items: center;
+    width: 90%;
+    background-color: white;
+    color: #666666;
+    height: 2vw;
+    margin-top: 0.5vw;
+    margin: 0;
+}
+
+.kleine-image-text {
+    font-size: 14px;
+    text-align: center;
+    padding: 1vw;
+    margin: 0px;
+    color: #666666;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.bestelpagina {
+    flex-direction: column;
+    display: flex;
+    background-color: white;
+    width: 53.65%;
+    height: 100%;
+    padding-bottom: 20px;
+    margin-left: 16%;
+}
+
+@media (max-width: 600px) {
+    .bestelpagina {
+        width: 100%;
+        height: 1000px;
+        padding-left: 1%;
+        padding-bottom: 0px;
+    }
+
+    .afrekenen-button {
+        width: 100% !important;
+        height: 15vw !important;
+        font-size: 25px !important;
+        margin-left: 0 !important;
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+    }
+
+}
+
+.form-text {
+    color: #B97D46;
+    font-size: 30px;
+    padding: 0px;
+    font-weight: bold;
+    width: auto;
+    margin-left: 20px;
+}
+
+#form-naam {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0px;
+}
+
+
+input[type="text"],
+input[type="email"] {
+    border: 2px solid #b97d46;
+    width: 41%;
+    height: 40px;
+    margin-left: 20px;
+}
+
+input[type="email"] {
+    margin-top: 5px;
+    width: 98%;
+    font-family: 'Lato', sans-serif;
+    margin-left: 20px;
+}
+
+@media (max-width: 600px) {
+
+    input[type="text"],
+    input[type="email"] {
+        width: 47.5%;
+    }
+
+    .form-text {
+        font-size: 20px !important;
+        width: auto !important;
+    }
+
+    .bestelpagina {
+        width: 100%;
+        height: auto;
+        padding-bottom: 20px;
+        margin: 0 !important;
+
+    }
+}
+
+#form-input {
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* Payment options */
+.card-select-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    justify-content: flex-start;
+    margin-bottom: 36px;
+    /* spacing after cards */
+    margin-left: 20px;
 }
 
 /* Force voorwaarden below */

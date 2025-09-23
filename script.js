@@ -51,7 +51,9 @@ function show(data) {
         
 
         //overview
-        
+        const over= document.createElement("p");
+        over.textContent = overview;
+        div.appendChild(over);
 
         //vote
         

@@ -723,6 +723,16 @@ h2{
     padding-bottom: 60px;
 }
 
+#info-knop{
+     width: 80%;
+    height: 30px;
+    background-color: #B97D46;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    margin-left: 11%;
+}
+
 /*Einde film agenda*/
 
 /* begin bestelpagina */

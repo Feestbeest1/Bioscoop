@@ -55,7 +55,9 @@
 </div>
   
 <div id="filmsContainer"></div>
-  
+  <div id="film-box">
+    <div id="info-knop"></div>
+  </div>
     <script>
         const container = document.getElementById("filmsContainer");
         for (let i = 0; i < 12; i++) {

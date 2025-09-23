@@ -33,6 +33,7 @@
         <label>
         <!-- <input type="radio" name="film-filter" id="categorie"> -->
         <select class="categorie-box">
+            <h2>
             <option>CATEGORIE</option>
             <option>ACTIE</option>
             <option>AVONTUUR</option>
@@ -42,6 +43,7 @@
             <option>HORROR</option>
             <option>ROMANTIEK</option>
             <option>THRILLER</option>
+</h2>
         </select>
 </label>
     </div>
@@ -51,8 +53,9 @@
     </div>
 </div>
 </div>
+  
 <div id="filmsContainer"></div>
-
+  
     <script>
         const container = document.getElementById("filmsContainer");
         for (let i = 0; i < 12; i++) {

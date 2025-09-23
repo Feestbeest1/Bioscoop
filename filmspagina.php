@@ -12,8 +12,10 @@
     <title>Bioscoop</title>
 </head>
 <body>
-    <?php 
-   include 'header.php';
+    
+<?php 
+   include("includes/header.php");
+   include("includes/topbar.php");
 ?>
 
 <div id="film-agendaContainer">
@@ -84,7 +86,7 @@
     </div>
 
 <?php 
-   include 'footer.php';
+   include 'includes/footer.php';
 ?>
 </body>
 </html>

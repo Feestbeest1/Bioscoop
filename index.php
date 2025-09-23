@@ -35,7 +35,7 @@
     </div>
 
    <?php 
-   include 'filmagenda.php';
+   include 'includes/filmagenda.php';
    ?>
 </body>
 </html>

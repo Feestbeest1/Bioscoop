@@ -652,7 +652,7 @@ label{
 
 .box{
     width: auto;
-    height: 30px;
+    height: 25px;
     background-color: white;
     margin-top: 5px;
     padding-top: 5px;
@@ -708,11 +708,15 @@ label{
 #bekijk-knop{
     width: 80%;
     height: 30px;
-    background-color: B97D46;
+    background-color: #B97D46;
     color: white;
     padding: 10px;
     font-weight: bold;
     margin-left: 11%;
+}
+
+h2{
+    font-family: "Lato";
 }
 
 #button-row{
@@ -730,3 +734,9 @@ label{
     height: 100px;
 }
 
+#gegevens-box{
+    width: 600px;
+    height: 300px;
+    background: white;
+    
+}

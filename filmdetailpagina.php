@@ -24,9 +24,34 @@ $movieData = $data['data'];
 curl_close($ch);
 
 
+
+
+$movieData['movie']['warnings'] = [
+    [
+        'name' => '12 jaar',
+        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/12-jaar.png'
+    ],
+    [
+        'name' => 'Geweld',
+        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/geweld.png'
+    ],
+    [
+        'name' => 'Angst',
+        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/angst.png'
+    ],
+];
+
+
+
+
+
 $filledStars = round($movieData["movie"]["vote_average"] / 2);
 $stars = 5 - $filledStars;
 $totalStars = 5;
+
+
+
+
 
 include("includes/header.php");
 include("includes/topbar.php");
@@ -56,10 +81,18 @@ include("includes/topbar.php");
                     <?php endif; ?>
                 <?php endfor; ?>
             </div>
-            <div class="status">Released:&nbsp;<?php echo $movieData["movie"]["status"]; ?></div>
-            <div class="beschrijving"><?php echo $movieData["movie"]["overview"]; ?></div>
-                
+        <div class="kijkwijzer-container">
+            <?php for ($x = 0; $x < count($movieData["movie"]["warnings"]); $x++) {
+                ?>
+                <img src="<?php echo $movieData["movie"]["warnings"][$x]['icon'] ?>"></img>
+                <?php
+            }?>
+        </div>
+
+
         <div class="info-film">
+            <div class="status">Released:&nbsp;<?php echo $movieData["movie"]["release_date"]; ?></div>
+            <div class="beschrijving"><?php echo $movieData["movie"]["overview"]; ?></div>
             <div class="genre">Genre:
                 <?php
                 for ($x = 0; $x < count($movieData["movie"]["genres"]); $x++) {
@@ -71,7 +104,7 @@ include("includes/topbar.php");
                 ?>
             </div>
             <div class="film-lengte">Filmlengte:&nbsp;<?php echo $movieData["movie"]["runtime"]; ?>minutes</div>
-            <div class="land">Land:<?php echo $movieData["movie"]["origin_country"][0];?></div>
+            <div class="land">Land:&nbsp;<?php echo $movieData["movie"]["origin_country"][0];?></div>
             <div class="ratings">
                 lmbd score: <?php echo number_format($movieData["movie"]["vote_average"], 1, '.', ''); ?>/10
             </div>
@@ -83,12 +116,21 @@ include("includes/topbar.php");
                 );
                 ?>
             </div>
-            <img src="https://image.tmdb.org/t/p/w500<?php for ($x < count ($movieData["movie"]["profile_path"]); $x++){
-                echo $movieData["movie"]["profile_path"][$x];
-                
-            } ?>"></img>
+        <div class="acteurs-container">
+            <p class="titel">Acteurs:</p>
+            <div class="acteurs-row">
+            <?php
+            for ($x = 0; $x < 4 && $x < count($movieData["movie"]["actors"]); $x++) {
+                $actor = $movieData["movie"]["actors"][$x];
+                ?>
+                <div class="acteur">
+                    <img src="https://image.tmdb.org/t/p/w500<?php echo $movieData["movie"]["actors"][$x]["profile_path"];?>"></img>
+                    <p><?php echo htmlspecialchars($actor['name']);?></p>
+                </div>
+                <?php } ?>
+            </div>
         </div>
-
+      </div>
     </div>
 </div>
 

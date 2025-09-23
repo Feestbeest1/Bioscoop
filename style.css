@@ -928,3 +928,15 @@ label{
     flex-direction: column;
 }
 
+.parent {
+display: grid;
+grid-template-columns: repeat(10, 1fr);
+/* grid-template-rows: repeat(5, 1fr); */
+grid-column-gap: 6px;
+grid-row-gap: 6px;
+}
+
+.stoel{
+    background-color: red;
+}
+

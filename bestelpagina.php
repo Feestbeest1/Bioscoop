@@ -125,11 +125,17 @@
             <h3>FILMDOEK</h3>
          </div>
 
-         <script>
-            
+         <div class="parent">
+         <?php
+            for($rij = 1; $rij<=10; $rij++){
+               for($stoel = 1; $stoel <= 10; $stoel++){
+                  echo '<div class="stoel" id="'.$rij.'-'.$stoel.'">'.$rij.'-'.$stoel.'</div>';
+               }
+            }
+         ?>
+         </div>
 
-         </script>
-
+         <input type="text" id="stoelenkeuze" name="stoelen" value="leeg">
       </div>
 
       <div id="filmkeuze"></div>
@@ -138,6 +144,7 @@
 
    </div>
 </div>
+<script src="stoelselect.js"></script>
 </body>
 
 

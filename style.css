@@ -786,7 +786,7 @@ label{
     flex-direction: column;
     background-color: white;
     width: 80%;
-    height: 500px;
+    height: 850px;
     margin-top: 50px;
     padding: 20px;
 }
@@ -794,7 +794,7 @@ label{
     color: #B97D46;
     margin: 0;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
 }
 
 #filmselectie{
@@ -904,6 +904,7 @@ label{
 #voucherbutton{
     width: 593px;
     border-color: #B97D46;
+    margin-bottom: 10px;
 }
 
 #voucherknop{
@@ -911,5 +912,19 @@ label{
     color:white;
     background-color: #B97D46;
     border-color: #B97D46;
+}
+
+#lijn3{
+    display: flex;
+    width: 100%;
+    height: 3px;
+    background-color: #B97D46;
+}
+
+#filmdoekmidden{
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+    flex-direction: column;
 }
 

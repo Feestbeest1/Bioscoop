@@ -41,15 +41,13 @@
          <div id="ticketinfolinks">
 
             <div id="ticketinforechts">
-
                <div>TYPE</div>
-
                   <div id="tekstenTicket">
                      <p>PRIJS</p>
                      <div>AANTAL</div>
                   </div>
-
             </div>
+
             <div id="lijn1"></div>
             
             <div id="ticketBox">
@@ -115,21 +113,31 @@
             <form action="includes/InsertMovieScreening.php" method="POST">
                <input type="text" id="voucherbutton" placeholder="code">
                <input type="submit" value="Toevoegen" id="voucherknop">
-               
             </form>
             </div>
+
          </div>
 
+         <h3>STAP 2: KIES JE STOEL</h3>
+         <div id="filmdoekmidden">
+            <div id="lijn3"></div>
+            <!-- <div id="filmdoek"></div> -->
+            <h3>FILMDOEK</h3>
+         </div>
+
+         <script>
+            
+
+         </script>
 
       </div>
 
       <div id="filmkeuze"></div>
 
-      
-   </div>
-   
-</div>
 
+
+   </div>
+</div>
 </body>
 
 

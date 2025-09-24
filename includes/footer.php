@@ -29,9 +29,18 @@
 <div class="footer_container_3">
   <p class="footer_text_3">VOLG ONS</p>
   <div class="footer_socials">
-    <img class="footer_socials_img" src="img/facebook.png" alt="facebook">
-    <img class="footer_socials_img" src="img/twitter.png" alt="twitter">
-    <img class="footer_socials_img" src="img/instagram.png" alt="instagram">
+    <a href="https://www.facebook.com/profile.php?id=61580857001690" target="_blank">
+        <img src="img/facebook.png" alt="facebook">
+    </a>
+
+    <a href="https://x.com/home" target="_blank">
+        <img src="img/twitter.png" alt="twitter">
+    </a>
+
+    <a href="https://www.instagram.com" target="_blank">
+        <img src="img/instagram.png" alt="instagram">
+    </a>
+
 </div>
 </div>
 <img class="footer_bg_img" src="img/movie_ding.png" alt="footer_bg">

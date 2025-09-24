@@ -65,45 +65,11 @@
                      <div>€7,00</div>
                   </div>
 
+                  
                   <div id="ticketboxaantallen">
-                     <select class="aantal">
-                        <option class="aantal" selected hidden>0</option>
-                        <option value="aantal">1</option>
-                        <option value="aantal">2</option>
-                        <option value="aantal">3</option>
-                        <option value="aantal">4</option>
-                        <option value="aantal">5</option>
-                        <option value="aantal">6</option>
-                        <option value="aantal">7</option>
-                        <option value="aantal">8</option>
-                        <option value="aantal">9</option>
-                     </select>
-
-                     <select class="aantal">
-                        <option class="aantal" selected hidden>0</option>
-                        <option value="aantal">1</option>
-                        <option value="aantal">2</option>
-                        <option value="aantal">3</option>
-                        <option value="aantal">4</option>
-                        <option value="aantal">5</option>
-                        <option value="aantal">6</option>
-                        <option value="aantal">7</option>
-                        <option value="aantal">8</option>
-                        <option value="aantal">9</option>
-                     </select>
-
-                     <select class="aantal">
-                        <option class="aantal" selected hidden>0</option>
-                        <option value="aantal">1</option>
-                        <option value="aantal">2</option>
-                        <option value="aantal">3</option>
-                        <option value="aantal">4</option>
-                        <option value="aantal">5</option>
-                        <option value="aantal">6</option>
-                        <option value="aantal">7</option>
-                        <option value="aantal">8</option>
-                        <option value="aantal">9</option>
-                     </select>
+                     <input type="number" class="aantal" name="aantal">
+                     <input type="number" class="aantal" name="aantal">
+                     <input type="number" class="aantal" name="aantal">
                   </div>
                </div>
             </div>

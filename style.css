@@ -722,40 +722,41 @@ body {
 }
 
 /*Begin film agenda*/
-#Film-agenda-box {
+#Film-agenda-box{
     background-color: white;
     width: 86%;
     height: 100px;
+    
 }
 
-#film-text {
+#film-text{
     color: #B97D46;
     font-size: 50px;
     padding: 20px;
     font-weight: bold;
 }
 
-.row {
+.row{
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
-label {
+label{
     color: #B97D46;
     display: flex;
 }
 
-#film-agendaContainer {
+#film-agendaContainer{
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
 }
 
-.box {
+.box{
     width: auto;
-    height: 30px;
+    height: 25px;
     background-color: white;
     margin-top: 5px;
     padding-top: 5px;
@@ -763,21 +764,20 @@ label {
     font-weight: bold;
 }
 
-.column {
+.column{
     width: 45%;
     height: 160px;
     margin-top: 10%;
     margin-left: 11%;
 }
 
-.film-box {
-    height: 550px;
+.film-box{
+    height: auto;
     width: 16%;
     background-color: white;
-
 }
 
-.categorie-box {
+.categorie-box{
     width: auto;
     height: 30px;
     background-color: white;
@@ -789,14 +789,14 @@ label {
     font-weight: bold;
 }
 
-#line {
+#line{
     width: 35px;
     height: 5px;
     background-color: rgb(255, 255, 255);
     margin: 6px 0;
 }
 
-#filmsContainer {
+#filmsContainer{
     margin-left: 11%;
     margin-right: 210px;
     padding-bottom: 60px;
@@ -808,21 +808,57 @@ label {
     width: 78%;
 }
 
-#bekijk-knop {
+#bekijk-knop{
     width: 80%;
     height: 30px;
-    background-color: B97D46;
+    background-color: #B97D46;
     color: white;
     padding: 10px;
     font-weight: bold;
     margin-left: 11%;
 }
 
-#button-row {
+h2{
+    font-family: "Lato";
+}
+
+#button-row{
     padding-bottom: 60px;
 }
 
+.info-knop{
+    display: block;
+    width: 100px;
+    height: auto;
+     border: 0;
+    background-color:  #B97D46;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: "Lato";
+    
+    
+}
+
+#poster-image{
+    width: 100%;
+    
+}
+
+p{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+h1{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 /*Einde film agenda*/
+
 
 /* begin bestelpagina */
 #groepbestelpagina{

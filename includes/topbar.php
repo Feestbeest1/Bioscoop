@@ -10,12 +10,12 @@
         <p>|</p>
     </div>
     <div class="bioscoop-naam">
-        <p>Hellevoetsluis</p>
+        <p>Leerdam</p>
     </div>
   </div>
 
     <div class="button-container">
-        <button>FILM AGENDA</button>
+        <a href="http://localhost/Bioscoop/bestelpagina.php">FILM AGENDA</a>
         <button>ALLE VESTIGINGEN</button>
         <button>CONTACT</button>
     </div> 

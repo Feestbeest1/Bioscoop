@@ -78,12 +78,13 @@ header {
 
 }
 
-button {
+.button-container a {
     border: 0;
     background-color: white;
     font-size: 17px;
     font-weight: bold;
     font-family: "Lato";
+    cursor: pointer;
 }
 
 .stroke {

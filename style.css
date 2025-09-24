@@ -668,10 +668,9 @@ label{
 }
 
 .film-box{
-    height: 550px;
+    height: auto;
     width: 16%;
     background-color: white;
-
 }
 
 .categorie-box{
@@ -723,14 +722,35 @@ h2{
     padding-bottom: 60px;
 }
 
-#info-knop{
-     width: 80%;
-    height: 30px;
-    background-color: #B97D46;
+.info-knop{
+    display: block;
+    width: 100px;
+    height: auto;
+     border: 0;
+    background-color:  #B97D46;
     color: white;
-    padding: 10px;
+    font-size: 17px;
     font-weight: bold;
-    margin-left: 11%;
+    font-family: "Lato";
+    
+    
+}
+
+#poster-image{
+    width: 100%;
+    
+}
+
+p{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+h1{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /*Einde film agenda*/

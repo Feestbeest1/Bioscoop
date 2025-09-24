@@ -1,6 +1,40 @@
 <?php
-include("includes/header.php");
-include("includes/topbar.php");
+    include("includes/header.php");
+    include("includes/topbar.php");
+   if(!isset($_GET['id'])){
+      exit("not a valid id");
+   }
+//  echo $_GET["id"];
+    $ch = curl_init("https://u240066.gluwebsite.nl/api/movie/".$_GET['id']);
+ 
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2",
+    "Content-Type: application/json"
+]);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+ 
+$response = curl_exec($ch);
+ 
+if (curl_errno($ch)) {
+    exit("Er is iets misgegaan met de API");
+}
+ 
+$data = json_decode($response, true);
+ 
+// if ($data['status'] !== "success") {
+//     exit("Er is iets misgegaan met de API");
+// }
+ 
+$movieData = $data['data'];
+ 
+
+
+//     echo "<pre>";
+// print_r($data);
+// echo "</pre>";
+
+
+curl_close($ch);
 ?>
 
 <body>
@@ -15,7 +49,7 @@ include("includes/topbar.php");
       <div id="witvlakbestel">
          
          <div id="filmselectie">
-            <div id="filmtitel">FILMTITEL</div>
+            <p><?php echo $movieData["movie"]["title"];?></p>
 
             <select class="datums">
                 <option class="datum" selected hidden>DATUM</option>
@@ -48,7 +82,7 @@ include("includes/topbar.php");
                   </div>
             </div>
 
-            <div id="lijn1"></div>
+            <div id="lijn1">h</div>
             
             <div id="ticketBox">
 
@@ -73,16 +107,19 @@ include("includes/topbar.php");
                   </div>
                </div>
             </div>
-            <div id="lijn2"></div>
+            <div id="lijn2">h</div>
+         </div>
 
-            <div id="vouchercode">VOUCHERCODE
+            <div id="vouchercode">
+            <p>VOUCHERCODE</p>
             <form action="includes/InsertMovieScreening.php" method="POST">
+
                <input type="text" id="voucherbutton" placeholder="code">
+
                <input type="submit" value="Toevoegen" id="voucherknop">
             </form>
             </div>
 
-         </div>
 
          <h3>STAP 2: KIES JE STOEL</h3>
          <div id="filmdoekmidden">
@@ -101,7 +138,13 @@ include("includes/topbar.php");
          ?>
          </div>
 
-         <input type="text" id="stoelenkeuze" name="stoelen" value="leeg">
+      <div id="stoelmogelijkheden">
+         <div id="vrijstoel">VRIJ</div>
+         <div id="bezetstoel">BEZET</div>
+         <div id="joustoel">JOUW SELECTIE</div>
+      </div>
+
+         <input type="text" id="stoelenkeuze" name="stoelen" placeholder="leeg">
       </div>
       
 

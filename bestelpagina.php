@@ -137,7 +137,7 @@ include("includes/topbar.php");
       </div>
       
 
-      <div id="filmkeuze">      <div class="kleine-image-container">
+      <div id="filmkeuze"> <div class="kleine-image-container">
 
          <img class="kleine_image" src="assets/films/deadpool.jpg" alt="Kleine Image">
 

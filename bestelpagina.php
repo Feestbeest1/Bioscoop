@@ -5,203 +5,240 @@ include("includes/topbar.php");
 
 <body>
 
-<div id="groepbestelpagina">
+   <div id="groepbestelpagina">
 
-   <div id="kbbestel">
-      <h1>TICKETS BESTELLEN</h1>
-   </div>
-      
-   <div id="bestelvlakken">
-      <div id="witvlakbestel">
-         
-         <div id="filmselectie">
-            <div id="filmtitel">FILMTITEL</div>
+      <div id="kbbestel">
+         <h1>TICKETS BESTELLEN</h1>
+      </div>
 
-            <select class="datums">
-                <option class="datum" selected hidden>DATUM</option>
-                <option value="15/09">15/09</option>
-                <option value="17/09">17/09</option>
-                <option value="22/09">22/09</option>
-                <option value="24/09">24/09</option>
-            </select>
+      <div id="bestelvlakken">
+         <div id="witvlakbestel">
 
-            <select class="tijdstip">
-                <option class="tijdstip" selected hidden>TIJDSTIP</option>
-                <option value="13:00">13:00</option>
-                <option value="15:30">15:30</option>
-                <option value="19:00">19:00</option>
-                <option value="21:30">21:30</option>
-            </select>
+            <div id="filmselectie">
+               <div id="filmtitel">FILMTITEL</div>
 
-         </div>
+               <select class="datums">
+                  <option class="datum" selected hidden>DATUM</option>
+                  <option value="15/09">15/09</option>
+                  <option value="17/09">17/09</option>
+                  <option value="22/09">22/09</option>
+                  <option value="24/09">24/09</option>
+               </select>
 
-         <h3>STAP 1: KIES JE TICKET</h3>
-         
-         
-         <div id="ticketinfolinks">
+               <select class="tijdstip">
+                  <option class="tijdstip" selected hidden>TIJDSTIP</option>
+                  <option value="13:00">13:00</option>
+                  <option value="15:30">15:30</option>
+                  <option value="19:00">19:00</option>
+                  <option value="21:30">21:30</option>
+               </select>
 
-            <div id="ticketinforechts">
-               <div>TYPE</div>
+            </div>
+
+            <h3>STAP 1: KIES JE TICKET</h3>
+
+
+            <div id="ticketinfolinks">
+
+               <div id="ticketinforechts">
+                  <div>TYPE</div>
                   <div id="tekstenTicket">
                      <p>PRIJS</p>
                      <div>AANTAL</div>
                   </div>
-            </div>
-
-            <div id="lijn1"></div>
-            
-            <div id="ticketBox">
-
-               <div id=TicketOpties>
-                  <div>Normaal</div><br>
-                  <div>Kind t/m 11 jaar</div><br>
-                  <div>65 +</div>
                </div>
-               
-               <div id="ticketoptiebox">
-                  <div id="ticketprijzen">
-                     <div>€9,00</div>
-                     <div>€5,00</div>
-                     <div>€7,00</div>
+
+               <div id="lijn1"></div>
+
+               <div id="ticketBox">
+
+                  <div id=TicketOpties>
+                     <div>Normaal</div><br>
+                     <div>Kind t/m 11 jaar</div><br>
+                     <div>65 +</div>
                   </div>
 
-                  
-                  <div id="ticketboxaantallen">
-                     <input type="number" class="aantal" name="aantal">
-                     <input type="number" class="aantal" name="aantal">
-                     <input type="number" class="aantal" name="aantal">
+                  <div id="ticketoptiebox">
+                     <div id="ticketprijzen">
+                        <div>€9,00</div>
+                        <div>€5,00</div>
+                        <div>€7,00</div>
+                     </div>
+
+
+                     <div id="ticketboxaantallen">
+                        <input type="number" class="aantal" name="aantal">
+                        <input type="number" class="aantal" name="aantal">
+                        <input type="number" class="aantal" name="aantal">
+                     </div>
                   </div>
                </div>
+               <div id="lijn2"></div>
+
+               <div id="vouchercode">VOUCHERCODE
+                  <form action="includes/InsertMovieScreening.php" method="POST">
+                     <input type="text" id="voucherbutton" placeholder="code">
+                     <input type="submit" value="Toevoegen" id="voucherknop">
+                  </form>
+               </div>
+
             </div>
-            <div id="lijn2"></div>
 
-            <div id="vouchercode">VOUCHERCODE
-            <form action="includes/InsertMovieScreening.php" method="POST">
-               <input type="text" id="voucherbutton" placeholder="code">
-               <input type="submit" value="Toevoegen" id="voucherknop">
-            </form>
+            <h3>STAP 2: KIES JE STOEL</h3>
+            <div id="filmdoekmidden">
+               <div id="lijn3"></div>
+               <!-- <div id="filmdoek"></div> -->
+               <h3>FILMDOEK</h3>
             </div>
 
-         </div>
-
-         <h3>STAP 2: KIES JE STOEL</h3>
-         <div id="filmdoekmidden">
-            <div id="lijn3"></div>
-            <!-- <div id="filmdoek"></div> -->
-            <h3>FILMDOEK</h3>
-         </div>
-
-         <div class="parent">
-         <?php
-            for($rij = 1; $rij<=10; $rij++){
-               for($stoel = 1; $stoel <= 10; $stoel++){
-                  echo '<div class="stoel" id="'.$rij.'-'.$stoel.'">'.$rij.'-'.$stoel.'</div>';
+            <div class="parent">
+               <?php
+               for ($rij = 1; $rij <= 10; $rij++) {
+                  for ($stoel = 1; $stoel <= 10; $stoel++) {
+                     echo '<div class="stoel" id="' . $rij . '-' . $stoel . '">' . $rij . '-' . $stoel . '</div>';
+                  }
                }
-            }
-         ?>
+               ?>
+            </div>
+
+            <input type="text" id="stoelenkeuze" name="stoelen" value="leeg">
          </div>
 
-         <input type="text" id="stoelenkeuze" name="stoelen" value="leeg">
-      </div>
-      
 
-      <div id="filmkeuze"> <div class="kleine-image-container">
+         <div id="filmkeuze">
+            <div class="kleine-image-container">
 
-         <img class="kleine_image" src="assets/films/deadpool.jpg" alt="Kleine Image">
+               <img class="kleine_image" src="assets/films/deadpool.jpg" alt="Kleine Image">
 
-         <p class="kleine-image-titel">JURASSIC WORLD:
-            FALLEN KINGDOM </p>
+               <p class="kleine-image-titel">JURASSIC WORLD:
+                  FALLEN KINGDOM </p>
 
-         <div class="kleine-image-stars">
-            <span class="stars"></span>
-            <span class="stars"></span>
-            <span class="stars"></span>
-            <span class="stars"></span>
-            <span class="stars"></span>
-         </div>
-
-         <p class="kleine-image-release"> Release: 7-06-2018</p>
-
-
-         <p class="kleine-image-text">Welkom in Jurassic World: Fallen
-            Kingdom! Favoriete personages
-            keren terug in dit 3D actie-
-            spektakel.</p>
-
-      </div></div>
-
-      
-
-
-
-   </div>
-
-   <div class="bestelpagina">
-      <p class="form-text">STAP 4: VUL JE GEGEVENS IN</p>
-
-      <div id="form-input">
-         <form action="bestelpagina.php" method="post">
-            <div class="naam-grid-container">
-               <div class="naam-grid">
-                  <input type="text" name="naam" placeholder="Achternaam" required>
-                  <input type="text" name="voor_naam" placeholder="Voornaam" required>
+               <div class="kleine-image-stars">
+                  <span class="stars"></span>
+                  <span class="stars"></span>
+                  <span class="stars"></span>
+                  <span class="stars"></span>
+                  <span class="stars"></span>
                </div>
+
+               <p class="kleine-image-release"> Release: 7-06-2018</p>
+
+
+               <p class="kleine-image-text">Welkom in Jurassic World: Fallen
+                  Kingdom! Favoriete personages
+                  keren terug in dit 3D actie-
+                  spektakel.</p>
+
             </div>
-            <div class="form-row">
-               <input type="email" name="email" placeholder="E-mail" required class="form-full">
+         </div>
+
+
+
+
+
+      </div>
+
+      <div class="bestelpagina">
+
+         <p class="form-text">STAP 3: CONTROLEER JE BESTELLING</p>
+
+         <div class="tweede-kleine-image-container">
+
+            <div class="tkki-container">
+               <img class="tweede-kleine-image" src="assets\films\Jurassic-World_-Fallen-Kingdom.jpg"
+                  alt="Kleine Image">
+
+
+            </div>
+            <div class="tkki-info">
+               <p class="tweede-kleine-image-titel">JURASSIC WORLD:
+                  FALLEN KINGDOM </p>
+               <div class="tkki-kijkwijzer-container">
+
+                  <img class="tkki-kijkwijzer" src="" alt="Kleine Image">
+
+               </div>
+               <div class="tkki-info-container">
+                  <p class="tkki-info-text">Bioscoop:</p>
+                  <p class="tkki-info-text">Wanneer:</p>
+                  <p class="tkki-info-text">Stoelen:</p>
+                  <p class="tkki-info-text">Tickets: </p>
+               </div>
+               <p class="tkki-totaal">Totaal # ticket: #####</p>
+
             </div>
 
-            <div class="form-row">
-               <input type="email" name="email_2" placeholder="E-mail" required class="form-full">
-            </div>
+         </div>
 
-            <p class="form-text">STAP 5: KIES JE BETAALWIJZE</p>
+      </div>
 
-            <!-- payment options -->
-            <div class="card-select-row">
-               <label class="card-option">
-                  <input type="radio" name="card_type" value="visa" required>
-                  <img src="img/nationale_bioscoop_bon.png" alt="Visa" class="card-img">
-               </label>
-               <label class="card-option">
-                  <input type="radio" name="card_type" value="mastercard">
-                  <img src="img/maestro.png" alt="Mastercard" class="card-img">
-               </label>
-               <label class="card-option">
-                  <input type="radio" name="card_type" value="amex">
-                  <img src="img/ideal.png" alt="Amex" class="card-img">
-               </label>
-            </div>
-            <!-- end payment options -->
 
-            <!-- voorwaarden block now separate -->
-            <div class="voorwaarden-container">
-               <div class="form-row checkbox-row" style="align-items:center;">
-                  <input type="checkbox" id="voorwaarden" name="voorwaarden" required style="margin-right:8px;">
-                  <label for="voorwaarden" style="margin:0;">
-                     Ik accepteer de <a href="#" target="_blank">algemene voorwaarden</a>
-                  </label>
+      <div class="bestelpagina">
+         <p class="form-text">STAP 4: VUL JE GEGEVENS IN</p>
+
+         <div id="form-input">
+            <form action="bestelpagina.php" method="post">
+               <div class="naam-grid-container">
+                  <div class="naam-grid">
+                     <input type="text" name="naam" placeholder="Achternaam" required>
+                     <input type="text" name="voor_naam" placeholder="Voornaam" required>
+                  </div>
+               </div>
+               <div class="form-row">
+                  <input type="email" name="email" placeholder="E-mail" required class="form-full">
                </div>
 
                <div class="form-row">
-
+                  <input type="email" name="email_2" placeholder="E-mail" required class="form-full">
                </div>
-            </div>
 
-         </form>
+               <p class="form-text">STAP 5: KIES JE BETAALWIJZE</p>
+
+               <!-- payment options -->
+               <div class="card-select-row">
+                  <label class="card-option">
+                     <input type="radio" name="card_type" value="visa" required>
+                     <img src="img/nationale_bioscoop_bon.png" alt="Visa" class="card-img">
+                  </label>
+                  <label class="card-option">
+                     <input type="radio" name="card_type" value="mastercard">
+                     <img src="img/maestro.png" alt="Mastercard" class="card-img">
+                  </label>
+                  <label class="card-option">
+                     <input type="radio" name="card_type" value="amex">
+                     <img src="img/ideal.png" alt="Amex" class="card-img">
+                  </label>
+               </div>
+               <!-- end payment options -->
+
+               <!-- voorwaarden block now separate -->
+               <div class="voorwaarden-container">
+                  <div class="form-row checkbox-row" style="align-items:center;">
+                     <input type="checkbox" id="voorwaarden" name="voorwaarden" required style="margin-right:8px;">
+                     <label for="voorwaarden" style="margin:0;">
+                        Ik accepteer de <a href="#" target="_blank">algemene voorwaarden</a>
+                     </label>
+                  </div>
+
+                  <div class="form-row">
+
+                  </div>
+               </div>
+
+            </form>
+         </div>
       </div>
+
+
+
+      <input type="submit" value="AFREKENEN" class="afrekenen-button">
+
+
+
+
+
    </div>
-
-   
-
-   <input type="submit" value="AFREKENEN" class="afrekenen-button">
-
-
-
-
-
-</div>
-<script src="stoelselect.js"></script>
+   <script src="stoelselect.js"></script>
 </body>
 
 

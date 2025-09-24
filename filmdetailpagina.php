@@ -72,11 +72,11 @@ include("includes/topbar.php");
                 <?php for ($i = 0; $i < $totalStars; $i++): ?>
                     <?php if ($i < $filledStars): ?>
                         <div class="star-filled">
-                            <img src="sterretje.svg" alt="Filled Star">
+                            <img src="img/sterretje.svg" alt="Filled Star">
                     </div>
                     <?php else: ?>
                         <div class="star-notfilled">
-                            <img src="sterretje-leeg.svg" alt="Empty Star">
+                            <img src="img/sterretje-leeg.svg" alt="Empty Star">
                     </div>
                     <?php endif; ?>
                 <?php endfor; ?>

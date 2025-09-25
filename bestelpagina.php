@@ -28,21 +28,6 @@ $filledStars = round($movieData["movie"]["vote_average"] / 2);
 $stars = 5 - $filledStars;
 $totalStars = 5;
 
-$movieData['movie']['warnings'] = [
-    [
-        'name' => '12 jaar',
-        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/12-jaar.png'
-    ],
-    [
-        'name' => 'Geweld',
-        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/geweld.png'
-    ],
-    [
-        'name' => 'Angst',
-        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/angst.png'
-    ],
-];
-
 include("includes/header.php");
 include("includes/topbar.php");
 ?>

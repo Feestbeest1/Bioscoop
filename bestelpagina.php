@@ -28,6 +28,21 @@ $filledStars = round($movieData["movie"]["vote_average"] / 2);
 $stars = 5 - $filledStars;
 $totalStars = 5;
 
+$movieData['movie']['warnings'] = [
+    [
+        'name' => '12 jaar',
+        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/12-jaar.png'
+    ],
+    [
+        'name' => 'Geweld',
+        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/geweld.png'
+    ],
+    [
+        'name' => 'Angst',
+        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/angst.png'
+    ],
+];
+
 include("includes/header.php");
 include("includes/topbar.php");
 ?>
@@ -163,12 +178,28 @@ include("includes/topbar.php");
 
          
 
+      <h3>STAP 3: CONTROLEER JE BESTELLING</h3>
+      <div class="container-controle">
+            <div class="posterding">
+               <img src="https://image.tmdb.org/t/p/w500<?php echo $movieData["movie"]["poster_path"];?>">      
+            </div>
+            <div class="tekstding">
+               <p><?php echo $movieData["movie"]["title"]; ?></p>
+                       <div class="kijkwijzer-container">
+            <?php for ($x = 0; $x < count($movieData["movie"]["warnings"]); $x++) {
+                ?>
+                <img src="<?php echo $movieData["movie"]["warnings"][$x]['icon'] ?>"></img>
+                <?php
+            }?>
+        </div>
+            </div>
       </div>
+</div>
       
 
       <div id="filmkeuze">      
          <div class="kleine-image-container">
-         <img class="kleine_image" src="https://image.tmdb.org/t/p/w500<?php echo $movieData["movie"]["poster_path"]; ?>"></img>
+         <img class="kleine_image" src="https://image.tmdb.org/t/p/w500<?php echo $movieData["movie"]["poster_path"]; ?>">
 
       <div class="informatie-film-bestelpagina">
         <p class="kleine-image-titel"><?php echo $movieData["movie"]["title"]; ?></p>
@@ -194,12 +225,8 @@ include("includes/topbar.php");
 
       </div></div>
                     </div>
-
-      
-
-
-
    </div>
+
 
    <div class="bestelpagina">
       <p class="form-text">STAP 4: VUL JE GEGEVENS IN</p>

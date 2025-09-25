@@ -7,6 +7,7 @@ body {
     background-color: black;
     margin: 0;
     font-family: "Lato";
+    scroll-behavior: smooth;
 }
 
 header {
@@ -91,7 +92,7 @@ header {
 .stroke {
     background-color: rgb(185, 125, 70);
     padding: 3px;
-    margin-top: 45px;
+    margin-top: 45px;;
 }
 
 ul {
@@ -139,6 +140,7 @@ li .films option {
     padding-right: 15px;
     position: relative;
     top: -2px;
+    cursor: pointer;
 }
 
 /* welkomsblok */
@@ -1011,11 +1013,40 @@ label {
     background-color: #B97D46;
 }
 
+.container-controle {
+    border: 3px solid #B97D46;
+    height: 300px;
+    display: flex;
+    gap: 20px;
+}
+
+.posterding {
+    padding: 15px 0px 15px 15px;
+}
+
+.posterding img {
+    height: 100%;
+    width: 200px;
+}
+
+.kijkwijzer-controle{
+    width: 40px;
+    height: 40px;
+}
+
 #filmdoekmidden{
     display: flex;
     align-content: space-between;
     align-items: center;
     flex-direction: column;
+}
+
+.tekstding p{
+    font-size: 21px;
+    font-weight: bold;
+    margin: 0;
+    color: #666666;
+    padding: 20px 20px 20px 5px;
 }
 
 /* Force voorwaarden below */

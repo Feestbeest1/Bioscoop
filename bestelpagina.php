@@ -230,7 +230,7 @@ $totalStars = 5;
             <div id="joustoel">JOUW SELECTIE</div>
          </div>
 
-         <input type="text" id="stoelenkeuze" name="stoelen" placeholder="leeg">
+         
       </div>
       
 
@@ -297,6 +297,7 @@ $totalStars = 5;
                <div class="tkki-info-container">
                   <p class="tkki-info-text">Bioscoop:</p>
                   <p class="tkki-info-text">Wanneer:</p>
+                  <input type="text" id="stoelenkeuze" name="stoelen" placeholder="leeg">
                   <p class="tkki-info-text">Stoelen:</p>
                   <p class="tkki-info-text">Tickets: </p>
                </div>

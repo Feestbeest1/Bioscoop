@@ -156,6 +156,8 @@ li .films option {
     margin-top: 40px;
     height: 250px;
     padding-left: 35px;
+    gap: 50px;
+    padding-top: 16px;
 }
 
 #welkomsblok h1 {

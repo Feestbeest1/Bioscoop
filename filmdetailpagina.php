@@ -70,7 +70,7 @@ $totalStars = 5;
                     </div>
                     <?php endif; ?>
                 <?php endfor; ?>
-            </div>
+            </div> 
         <div class="kijkwijzer-container">
             <?php for ($x = 0; $x < count($movieData["movie"]["warnings"]); $x++) {
                 ?>

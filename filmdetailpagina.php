@@ -1,5 +1,8 @@
 <?php
-$ch = curl_init("https://u240066.gluwebsite.nl/api/movie/" . $_GET['id']);
+    include("includes/header.php");
+    include("includes/topbar.php");
+
+    $ch = curl_init("https://u240066.gluwebsite.nl/api/movie/" . $_GET['id']);
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2",
@@ -15,17 +18,15 @@ if (curl_errno($ch)) {
 
 $data = json_decode($response, true);
 
-if($data['status'] !== "success") {
+if ($data['status'] !== "success") {
     exit("Er is iets misgegaan met de API");
 }
 
-$movieData = $data['data']; 
+$movieData = $data['data'];
 
 curl_close($ch);
 
-
-
-
+    
 $movieData['movie']['warnings'] = [
     [
         'name' => '12 jaar',
@@ -41,20 +42,9 @@ $movieData['movie']['warnings'] = [
     ],
 ];
 
-
-
-
-
 $filledStars = round($movieData["movie"]["vote_average"] / 2);
 $stars = 5 - $filledStars;
 $totalStars = 5;
-
-
-
-
-
-include("includes/header.php");
-include("includes/topbar.php");
 ?>
 <link rel="stylesheet" href="style.css">
 
@@ -93,6 +83,8 @@ include("includes/topbar.php");
         <div class="info-film">
             <div class="status">Released:&nbsp;<?php echo $movieData["movie"]["release_date"]; ?></div>
             <div class="beschrijving"><?php echo $movieData["movie"]["overview"]; ?></div>
+          
+        <div class="details">    
             <div class="genre">Genre:
                 <?php
                 for ($x = 0; $x < count($movieData["movie"]["genres"]); $x++) {
@@ -118,6 +110,7 @@ include("includes/topbar.php");
             </div>
         <div class="acteurs-container">
             <p class="titel">Acteurs:</p>
+        </div>
             <div class="acteurs-row">
             <?php
             for ($x = 0; $x < 4 && $x < count($movieData["movie"]["actors"]); $x++) {

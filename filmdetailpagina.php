@@ -143,7 +143,7 @@ include("includes/topbar.php");
             allowfullscreen>
         </iframe>
     </div>
-
+</div>
 <?php
    include("includes/footer.php");
 ?>

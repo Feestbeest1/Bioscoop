@@ -776,6 +776,9 @@ label{
     height: auto;
     width: 16%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
 }
 
 .categorie-box{
@@ -801,7 +804,6 @@ label{
     margin-left: 11%;
     margin-right: 210px;
     padding-bottom: 60px;
-    /* display: grid; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -829,21 +831,24 @@ h2{
 
 .info-knop{
     display: block;
-    width: 100px;
+    width: 80%;
     height: auto;
-     border: 0;
-    background-color:  #B97D46;
+    background-color: #B97D46;
     color: white;
-    font-size: 17px;
+    border: 0;
+    padding: 10px;
+    font-size: 14px;
     font-weight: bold;
-    font-family: "Lato";
-    
-    
+    font-family: "Lato";  
+    cursor: pointer;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
 }
 
 #poster-image{
     width: 100%;
-    
 }
 
 p{
@@ -854,8 +859,13 @@ p{
 h1{
     padding-left: 15px;
     padding-right: 15px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
+}
+
+#fullstar-image{
+    height: 30px;
+    width: auto;
 }
 
 /*Einde film agenda*/

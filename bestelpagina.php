@@ -91,9 +91,6 @@ $filledStars = round($movieData["movie"]["vote_average"] / 2);
 $stars = 5 - $filledStars;
 $totalStars = 5;
 
-include("includes/header.php");
-include("includes/topbar.php");
-
 ?>
 
 <body>
@@ -116,7 +113,7 @@ include("includes/topbar.php");
                   <h2><?php echo $movieData["movie"]["title"];?></h2>
                </div>
 
-            </div>
+            <!-- </div> -->
 
             <select class="datums">
                 <option class="datum" selected hidden>DATUM</option>
@@ -138,11 +135,11 @@ include("includes/topbar.php");
                      // }
                   ?>
             </select>
-
+         </div>
     
 
 
-            </div>
+            <!-- </div> -->
 
             <h3>STAP 1: KIES JE TICKET</h3>
 
@@ -183,21 +180,22 @@ include("includes/topbar.php");
                         <input type="number" class="aantal" name="aantal">
                         <input type="number" class="aantal" name="aantal">
                      </div>
+                     
                   </div>
                </div>
             </div>
 
             <div id="lijn2">h</div>
-         </div>
+         <!-- </div> -->
 
             <div id="vouchercode">
-            <p>VOUCHERCODE</p>
-            <form action="includes/InsertMovieScreening.php" method="POST">
+               <p>VOUCHERCODE</p>
+               <form action="includes/InsertMovieScreening.php" method="POST">
 
-               <input type="text" id="voucherbutton" placeholder="code">
+                  <input type="text" id="voucherbutton" placeholder="code">
 
-               <input type="submit" value="Toevoegen" id="voucherknop">
-            </form>
+                  <input type="submit" value="Toevoegen" id="voucherknop">
+               </form>
             </div>
 
 
@@ -220,16 +218,15 @@ include("includes/topbar.php");
             </div>
 
 
-            <input type="text" id="stoelenkeuze" name="stoelen" value="leeg">
+         <!-- </div> -->
+
+
+
+         <div id="stoelmogelijkheden">
+            <div id="vrijstoel">VRIJ</div>
+            <div id="bezetstoel">BEZET</div>
+            <div id="joustoel">JOUW SELECTIE</div>
          </div>
-
-
-
-      <div id="stoelmogelijkheden">
-         <div id="vrijstoel">VRIJ</div>
-         <div id="bezetstoel">BEZET</div>
-         <div id="joustoel">JOUW SELECTIE</div>
-      </div>
 
          <input type="text" id="stoelenkeuze" name="stoelen" placeholder="leeg">
       </div>

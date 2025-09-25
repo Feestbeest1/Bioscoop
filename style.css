@@ -536,8 +536,8 @@ h2 {
 
 /*Footer*/
 * {
-    margin: none;
-    padding: none;
+    margin: 0;
+    padding: 0;
 }
 
 p {
@@ -899,17 +899,26 @@ h1{
 #groepbestelpagina{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: center;
+    width: 100%;
+}
+#kbbestel,
+#witvlakbestel,
+#bestelvlakken,
+.bestelpagina {
+    margin-left: 0;  /* verwijder harde marges */
+    width: 90%;      /* max-width of percentage naar keuze */
+    max-width: 1200px; /* optioneel, voor grote schermen */
 }
 
 #kbbestel{
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: start;
     background-color: white;
     margin-top: 135px;
-    margin-left: 16%;
-    width: 69.5%;
+    margin-left: 13%;
+    width: 66.5%;
     height: 100px;
 }
 
@@ -923,7 +932,6 @@ h1{
     flex-direction: row;
     gap: 20px;
     width: 87%;
-    margin-left: -26px;
 }
 
 #witvlakbestel{
@@ -934,7 +942,7 @@ h1{
     height: 1150px;
     margin-top: 50px;
     padding: 20px;
-    margin-left: 20.5%;
+    margin-left: 16%;
 }
 #witvlakbestel h3{
     color: #B97D46;
@@ -1330,10 +1338,10 @@ background-color: #e6a967;
     flex-direction: column;
     display: flex;
     background-color: white;
-    width: 57.3%;
+    width: 50.9%;
     height: 100%;
     padding-bottom: 20px;
-    margin-left: 16%;
+    margin-left: 23.1%;
 }
 
 @media (max-width: 600px) {
@@ -1491,8 +1499,8 @@ input[type="email"] {
 
 .afrekenen-button {
     background-color: #B97D46;
-    margin-left: 10%;
-    width: 80%;
+    margin-left: 23%;
+    width: 67%;
     height: 7vw;
     color: white;
     font-size: 45px;

@@ -127,7 +127,7 @@ $totalStars = 5;
     </div>
 </div>
 
-    <a href="bestelpagina.php" class="buy-button">KOOP JE TICKETS</a>
+    <a href="bestelpagina.php?id=<?php echo $_GET['id']?>" class="buy-button">KOOP JE TICKETS</a>
     <div class="trailer">
         <iframe
             src="<?php echo preg_replace('/watch\?v=/', 'embed/', $movieData["movie"]["trailer_url"]); ?>"

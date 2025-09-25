@@ -60,9 +60,8 @@ $movieData = $data['data'];
                     <option value="">Kies je film</option>
 
                     <?php foreach ($movieData as $film) {?>
-                        <option value="<?php echo $movieData["movie_id"]; ?>">
+                        <option value="<?php echo $film["first_upcoming_screening_id"]; ?>">
                             <?php echo htmlspecialchars($film["title"]); ?>
-                            <?php echo ($movieData["movie_id"])?>
                         </option>
                     <?php
                     }

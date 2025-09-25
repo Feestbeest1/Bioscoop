@@ -193,7 +193,7 @@ li .films option {
 
 .mail{
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 38px;
 }
 
 #kaartblok {
@@ -1212,26 +1212,22 @@ grid-row-gap: 6px;
 } 
 
 .kleine-image-release {
-    padding-left: 10%;
-    justify-self: center;
-    align-items: center;
     width: 90%;
     background-color: white;
     color: #666666;
     height: 2vw;
-    margin-top: 20px;
+    margin-top: 0.5vw;
     margin: 0;
-    /* padding: 0; */
 }
 
 .kleine-image-text {
-    font-size: 14px;
-    text-align: center;
-    padding: 1vw;
+    font-size: 10px;
     margin: 0px;
     color: #666666;
     word-break: break-word;
     hyphens: auto;
+    padding-top: 10px;
+    padding-right: 15px;
 }
 
 .bestelpagina {

@@ -136,7 +136,7 @@ $totalStars = 5;
             allowfullscreen>
         </iframe>
     </div>
-
+</div>
 <?php
    include("includes/footer.php");
 ?>

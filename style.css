@@ -1192,7 +1192,7 @@ grid-row-gap: 6px;
 .kleine-image-stars {
     width: 100%;
     height: 2vw;
-    min-height: 2vw;
+    min-height: 30px;
     background-color: white;
 }
 
@@ -1200,22 +1200,24 @@ grid-row-gap: 6px;
     padding-left: 10%;
     justify-self: center;
     align-items: center;
-    width: 90%;
+    width: 80%;
     background-color: white;
     color: #666666;
     height: 2vw;
-    margin-top: 0.5vw;
+    margin-top: 20px;
     margin: 0;
+    /* padding: 0; */
 }
 
 .kleine-image-text {
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
-    padding: 1vw;
+    padding: 0;
     margin: 0px;
     color: #666666;
     word-break: break-word;
     hyphens: auto;
+    /* overflow-y: auto; */
 }
 
 .bestelpagina {
@@ -1423,4 +1425,115 @@ input[type="email"] {
 .naam-grid-container {
     width: 100%;
     margin-left: 5%;
+}
+
+.tweede-kleine-image-container{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #B97D46;
+    background-color: white;
+    height: 250px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.tweede-kleine-image {
+    width: 80%;
+    height: 90%;
+}
+
+.tkki-container{
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.tweede-kleine-image-titel {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 2vw;
+    color: #666666;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.tkki-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.tkki-kijkwijzer-container{
+    height: 50px;
+    width: 25%;
+    display: flex;
+    gap: 10px;
+}
+
+.tkki-kijkwijzer{
+    width: 40px;
+    height: 40px;
+}
+
+.tkki-info-container{
+    flex-direction: column;
+    display: flex;
+    gap: 0px;
+}
+
+.tkki-info-text{
+    padding: 0;
+    margin: 0px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.tkki-totaal{
+    padding: 0;
+    font-size: 14px;
+    color: #666666;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .tweede-kleine-image-container{
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .tkki-container{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tweede-kleine-image {
+        width: 80%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .tkki-kijkwijzer-container{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .tkki-info-text{
+        font-size: 20px;
+    }
+
+    .tkki-totaal{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .tkki-container{
+        width: 50%;
+    }
 }

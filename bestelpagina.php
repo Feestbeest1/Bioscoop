@@ -1,4 +1,33 @@
 <?php
+
+$ch = curl_init("https://u240066.gluwebsite.nl/api/movie/" . $_GET['id']);
+
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2",
+    "Content-Type: application/json"
+]);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+
+if (curl_errno($ch)) {
+    exit("Er is iets misgegaan met de API");
+}
+
+$data = json_decode($response, true);
+
+if ($data['status'] !== "success") {
+    exit("Er is iets misgegaan met de API");
+}
+
+$movieData = $data['data'];
+
+curl_close($ch);
+
+$filledStars = round($movieData["movie"]["vote_average"] / 2);
+$stars = 5 - $filledStars;
+$totalStars = 5;
+
 include("includes/header.php");
 include("includes/topbar.php");
 ?>
@@ -15,7 +44,7 @@ include("includes/topbar.php");
       <div id="witvlakbestel">
          
          <div id="filmselectie">
-            <div id="filmtitel">FILMTITEL</div>
+            <div><p><?php echo $movieData["movie"]["title"]; ?></p></div>
 
             <select class="datums">
                 <option class="datum" selected hidden>DATUM</option>
@@ -137,30 +166,34 @@ include("includes/topbar.php");
       </div>
       
 
-      <div id="filmkeuze">      <div class="kleine-image-container">
+      <div id="filmkeuze">      
+         <div class="kleine-image-container">
+         <img class="kleine_image" src="https://image.tmdb.org/t/p/w500<?php echo $movieData["movie"]["poster_path"]; ?>"></img>
 
-         <img class="kleine_image" src="assets/films/deadpool.jpg" alt="Kleine Image">
-
-         <p class="kleine-image-titel">JURASSIC WORLD:
-            FALLEN KINGDOM </p>
+      <div class="informatie-film-bestelpagina">
+        <p class="kleine-image-titel"><?php echo $movieData["movie"]["title"]; ?></p>
 
          <div class="kleine-image-stars">
-            <span class="stars"></span>
-            <span class="stars"></span>
-            <span class="stars"></span>
-            <span class="stars"></span>
-            <span class="stars"></span>
-         </div>
+                <?php for ($i = 0; $i < $totalStars; $i++): ?>
+                    <?php if ($i < $filledStars): ?>
+                        <div class="star-filled">
+                            <img src="img/sterretje.svg" alt="Filled Star">
+                    </div>
+                    <?php else: ?>
+                        <div class="star-notfilled">
+                            <img src="img/sterretje-leeg.svg" alt="Empty Star">
+                    </div>
+                    <?php endif; ?>
+                <?php endfor; ?>
+            </div>
+         
+         <div class="kleine-image-release">Released:&nbsp;<?php echo $movieData["movie"]["release_date"]; ?></div>
 
-         <p class="kleine-image-release"> Release: 7-06-2018</p>
 
-
-         <p class="kleine-image-text">Welkom in Jurassic World: Fallen
-            Kingdom! Favoriete personages
-            keren terug in dit 3D actie-
-            spektakel.</p>
+         <div class="kleine-image-text"><?php echo $movieData["movie"]["overview"]; ?></div>
 
       </div></div>
+                    </div>
 
       
 

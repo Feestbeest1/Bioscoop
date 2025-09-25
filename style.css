@@ -56,6 +56,7 @@ header {
 .logo p {
     color: rgb(185, 125, 70);
     margin-top: 27px;
+    padding: 0;
 }
 
 .streep p {
@@ -186,6 +187,12 @@ li .films option {
 
 #infoblok p {
     margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.mail{
+    margin-top: 10px;
     margin-left: 20px;
 }
 
@@ -1120,7 +1127,7 @@ label {
 
 .kleine-image-container {
     background-color: white;
-    height: 500px;
+    height: 600px;
     width: 215px;
     display: flex;
     flex-direction: column;
@@ -1131,26 +1138,31 @@ label {
     height: 60%;
 }
 
+.informatie-film-bestelpagina{ 
+    padding-left: 20px;
+}
+
 .kleine-image-titel {
-    font-size: 18px;
+    font-size: 21px;
     font-weight: bold;
-    text-align: center;
-    padding: 1vw;
-    margin: 0px;
+    padding-top: 1vw;
+    margin: 0;
     color: #666666;
 }
 
 .kleine-image-stars {
-    width: 100%;
-    height: 2vw;
-    min-height: 2vw;
+    display: flex;
     background-color: white;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
+.kleine-image-stars img{
+    width: 50px;
+    height: 37px;
+} 
+
 .kleine-image-release {
-    padding-left: 10%;
-    justify-self: center;
-    align-items: center;
     width: 90%;
     background-color: white;
     color: #666666;
@@ -1160,13 +1172,13 @@ label {
 }
 
 .kleine-image-text {
-    font-size: 14px;
-    text-align: center;
-    padding: 1vw;
+    font-size: 10px;
     margin: 0px;
     color: #666666;
     word-break: break-word;
     hyphens: auto;
+    padding-top: 10px;
+    padding-right: 15px;
 }
 
 .bestelpagina {

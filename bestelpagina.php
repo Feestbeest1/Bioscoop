@@ -1,43 +1,69 @@
 <?php
     include("includes/header.php");
     include("includes/topbar.php");
+
    if(!isset($_GET['id'])){
       exit("not a valid id");
    }
-//  echo $_GET["id"];
-    $ch = curl_init("https://u240066.gluwebsite.nl/api/movie/".$_GET['id']);
- 
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2",
-    "Content-Type: application/json"
-]);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
- 
-$response = curl_exec($ch);
- 
-if (curl_errno($ch)) {
-    exit("Er is iets misgegaan met de API");
-}
- 
-$data = json_decode($response, true);
- 
-// if ($data['status'] !== "success") {
-//     exit("Er is iets misgegaan met de API");
-// }
- 
-$movieData = $data['data'];
- 
 
+   // Haal filmdata op uit API
+   $ch = curl_init("https://u240066.gluwebsite.nl/api/movie/".$_GET['id']);
+   curl_setopt($ch, CURLOPT_HTTPHEADER, [ "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2", "Content-Type: application/json"]);
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   $response = curl_exec($ch);
 
-//     echo "<pre>";
-// print_r($data);
-// echo "</pre>";
+   if (curl_errno($ch)) {
+      exit("Er is iets misgegaan met de API");
+   }
 
+   $data = json_decode($response, true);
+   $movieData = $data['data'];
+   curl_close($ch);
+   
+   $movieId = $movieData['cinema']['movie_id'];
 
-curl_close($ch);
+   // Haal dates op uit API
+   $ch = curl_init("https://u240066.gluwebsite.nl/api/movie/".$movieId."/dates");
+   curl_setopt($ch, CURLOPT_HTTPHEADER, [ "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2", "Content-Type: application/json"]);
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   $response = curl_exec($ch);
+
+   if (curl_errno($ch)) {
+      exit("Er is iets misgegaan met de API");
+   }
+
+   $data = json_decode($response, true);
+   $movieDates = $data['data'];
+
+   // echo "<pre>";
+   // print_r($movieDates);
+   // echo "</pre>";
+
+   // $start_time = $movieData['cinema']['start_time'];
+   // $temp = explode(" ", $start_time);
+   // $date = $temp[0];
+   // $time = substr($temp[1],0,5);
+   // //echo $time;
+
+   curl_close($ch);
+
+   // haal data op voor tijden
+   //  $ch = curl_init("https://u240066.gluwebsite.nl/api/movie/" . $movieId . $date . "/times");
+   // curl_setopt($ch, CURLOPT_HTTPHEADER, [ "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2", "Content-Type: application/json"]);
+   // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   // $response = curl_exec($ch);
+
+   // if (curl_errno($ch)) {
+   //    exit("Er is iets misgegaan met de API");
+   // }
+
+   // $data = json_decode($response, true);
+   // $movieTimes = $data['data'];
+   // curl_close($ch);
 ?>
 
 <body>
+
 
 <div id="groepbestelpagina">
 
@@ -49,22 +75,32 @@ curl_close($ch);
       <div id="witvlakbestel">
          
          <div id="filmselectie">
-            <p><?php echo $movieData["movie"]["title"];?></p>
+            <div id="titelbox">
+               <div id="titelbox">
+                  <h2><?php echo $movieData["movie"]["title"];?></h2>
+               </div>
+
+            </div>
 
             <select class="datums">
                 <option class="datum" selected hidden>DATUM</option>
-                <option value="15/09">15/09</option>
-                <option value="17/09">17/09</option>
-                <option value="22/09">22/09</option>
-                <option value="24/09">24/09</option>
+                <?php 
+                  for($i=0; $i<count($movieDates); $i++) {
+                     $date = $movieDates[$i]['date'];
+                     echo "<option value=".$date.">".$date."</option>";     
+                  }
+               ?>
             </select>
 
             <select class="tijdstip">
                 <option class="tijdstip" selected hidden>TIJDSTIP</option>
-                <option value="13:00">13:00</option>
-                <option value="15:30">15:30</option>
-                <option value="19:00">19:00</option>
-                <option value="21:30">21:30</option>
+
+                  <?php 
+                     // for($i=0; $i<count($movieTimes); $i++) {
+                     // $date = $movieTimes[$i]['time'];
+                     // echo "<option value=".$time.">".$time."</option>";     
+                     // }
+                  ?>
             </select>
 
          </div>
@@ -173,10 +209,6 @@ curl_close($ch);
 
       </div></div>
 
-      
-
-
-
    </div>
 
    <div class="bestelpagina">
@@ -235,13 +267,7 @@ curl_close($ch);
       </div>
    </div>
 
-   
-
    <input type="submit" value="AFREKENEN" class="afrekenen-button">
-
-
-
-
 
 </div>
 <script src="stoelselect.js"></script>

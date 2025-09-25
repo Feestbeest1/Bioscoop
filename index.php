@@ -21,8 +21,10 @@
                 </div>
 
                 <div id="infoblok">
+
                 <p><strong>𖤣 Techniekweg 6<br>4143 HV Leerdam</strong></p>
                 <a href="tel:0345 - 637987"><p>🕻 0345 - 637987</p></a>
+
                 <p><strong>BEREIKBAARHEID</strong><br>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.</p>
                 </div>

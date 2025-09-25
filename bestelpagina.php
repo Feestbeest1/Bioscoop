@@ -91,6 +91,8 @@ $filledStars = round($movieData["movie"]["vote_average"] / 2);
 $stars = 5 - $filledStars;
 $totalStars = 5;
 
+
+
 ?>
 
 <body>

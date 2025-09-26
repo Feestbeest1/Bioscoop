@@ -3,7 +3,7 @@
    include("includes/topbar.php");
 ?>
 
-<body>
+<body class= home-page>
 
     <div id="welkomsblokBox">
         <div id="welkomsblok">

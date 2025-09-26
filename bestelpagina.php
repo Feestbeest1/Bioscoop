@@ -122,6 +122,10 @@ $totalStars = 5;
                   <option class="datum" selected hidden>DATUM</option>
                   <?php
                   for ($i = 0; $i < count($movieDates); $i++) {
+            <select class="datums">
+                <option value="" class="datum" selected hidden>DATUM</option>
+                <?php 
+                  for($i=0; $i<count($movieDates); $i++) {
                      $date = $movieDates[$i]['date'];
                      echo "<option value=" . $date . ">" . $date . "</option>";
                   }
@@ -140,6 +144,11 @@ $totalStars = 5;
                </select>
             </div>
 
+            <select class="tijdstip">
+                <option  value="" class="tijdstip" selected hidden>TIJDSTIP</option>
+            </select>
+         </div>
+    
 
 
             <!-- </div> -->
@@ -231,7 +240,7 @@ $totalStars = 5;
                <div id="joustoel">JOUW SELECTIE</div>
             </div>
 
-            <input type="text" id="stoelenkeuze" name="stoelen" placeholder="leeg">
+            
          </div>
 
 
@@ -383,7 +392,46 @@ $totalStars = 5;
    <script src="live-update-ki2.js"></script>
 
 </body>
+<script>
+   const movieId = <?php echo $movieId ?>;
+   const datumsElement = document.querySelector('select.datums');
+   const tijdElement = document.querySelector('select.tijdstip');
 
+   datumsElement.addEventListener('change', changeTimes);
+
+   function changeTimes(){
+      const selectedDatum = datumsElement.value;
+
+      if(selectedDatum === ""){
+         return;
+      }
+
+      fetch(`https://u240066.gluwebsite.nl/api/movie/${movieId}/${selectedDatum}/times?api_key=9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2`)
+         .then((response) => response.json())
+         .then((data) => {
+            tijdElement.innerHTML = '';
+            
+            if(data.status != 'success'){
+               console.log('Er is een fout opgetreden');
+               return;
+            }
+
+            const times = data.data;
+
+            times.forEach(timeData => {
+               const optionElement = document.createElement('option');
+               const splittedTime = timeData.time.split(':');
+               optionElement.value = timeData.movie_screening_id;
+               optionElement.innerHTML = splittedTime[0] + ':' + splittedTime[1];
+            
+               tijdElement.appendChild(optionElement);
+            });
+         });
+   }
+
+
+   changeTimes();
+</script>
 
 <?php
 include("includes/footer.php");

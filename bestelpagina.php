@@ -192,7 +192,7 @@ include("includes/topbar.php");
                   <input type="email" name="email_2" placeholder="E-mail" required class="form-full">
                </div>
 
-               <p class="form-text">STAP 5: KIES JE BETAALWIJZE</p>
+               <p class="form-text-2">STAP 5: KIES JE BETAALWIJZE</p>
 
                <!-- payment options -->
                <div class="card-select-row">

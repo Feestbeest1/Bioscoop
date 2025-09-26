@@ -1258,6 +1258,12 @@ grid-row-gap: 6px;
     margin-left: 20px;
 }
 
+.form-text-2{
+    color: #B97D46;
+    font-size: 30px;
+    min-width: 500px;
+}
+
 #form-naam {
     display: flex;
     gap: 10px;
@@ -1402,6 +1408,8 @@ input[type="email"] {
     grid-template-columns: 1fr 1fr;
     gap: 1px;
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .naam-grid input[type="text"] {
@@ -1424,7 +1432,7 @@ input[type="email"] {
 
 .naam-grid-container {
     width: 100%;
-    margin-left: 5%;
+    margin-left: 3%;
 }
 
 .tweede-kleine-image-container{

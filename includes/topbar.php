@@ -25,7 +25,7 @@ if ($data['status'] !== "success") {
     exit("Er is iets misgegaan met de API");
 }
 
-$movieData = $data['data'];
+$movieNamesData = $data['data'];
 ?>
 
 <header>
@@ -47,7 +47,7 @@ $movieData = $data['data'];
     <div class="button-container">
         <a href="http://localhost/Bioscoop/bestelpagina.php">FILM AGENDA</a>
         <a>ALLE VESTIGINGEN</a>
-        <a>CONTACT</a>
+        <a href="index.php#contactblok">CONTACT</a>
     </div>
 
 
@@ -59,7 +59,7 @@ $movieData = $data['data'];
             <li> <select class="films" onchange="goToFilm(this)">
                     <option value="">Kies je film</option>
 
-                    <?php foreach ($movieData as $film) {?>
+                    <?php foreach ($movieNamesData as $film) {?>
                         <option value="<?php echo $film["first_upcoming_screening_id"]; ?>">
                             <?php echo htmlspecialchars($film["title"]); ?>
                         </option>

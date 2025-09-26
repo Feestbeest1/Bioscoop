@@ -1,39 +1,147 @@
 <?php
-include("includes/header.php");
-include("includes/topbar.php");
+
+    include("includes/header.php");
+    include("includes/topbar.php");
+
+   if(!isset($_GET['id'])){
+      exit("not a valid id");
+   }
+
+   // Haal filmdata op uit API
+   $ch = curl_init("https://u240066.gluwebsite.nl/api/movie/".$_GET['id']);
+   curl_setopt($ch, CURLOPT_HTTPHEADER, [ "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2", "Content-Type: application/json"]);
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   $response = curl_exec($ch);
+
+   if (curl_errno($ch)) {
+      exit("Er is iets misgegaan met de API");
+   }
+
+   $data = json_decode($response, true);
+   $movieData = $data['data'];
+   curl_close($ch);
+   
+   $movieId = $movieData['cinema']['movie_id'];
+
+   // Haal dates op uit API
+   $ch = curl_init("https://u240066.gluwebsite.nl/api/movie/".$movieId."/dates");
+   curl_setopt($ch, CURLOPT_HTTPHEADER, [ "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2", "Content-Type: application/json"]);
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   $response = curl_exec($ch);
+
+   if (curl_errno($ch)) {
+      exit("Er is iets misgegaan met de API");
+   }
+
+   $data = json_decode($response, true);
+   $movieDates = $data['data'];
+
+   // echo "<pre>";
+   // print_r($movieDates);
+   // echo "</pre>";
+
+   // $start_time = $movieData['cinema']['start_time'];
+   // $temp = explode(" ", $start_time);
+   // $date = $temp[0];
+   // $time = substr($temp[1],0,5);
+   // //echo $time;
+
+   curl_close($ch);
+
+   // haal data op voor tijden
+   //  $ch = curl_init("https://u240066.gluwebsite.nl/api/movie/" . $movieId . $date . "/times");
+   // curl_setopt($ch, CURLOPT_HTTPHEADER, [ "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2", "Content-Type: application/json"]);
+   // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   // $response = curl_exec($ch);
+
+   // if (curl_errno($ch)) {
+   //    exit("Er is iets misgegaan met de API");
+   // }
+
+   // $data = json_decode($response, true);
+   // $movieTimes = $data['data'];
+   // curl_close($ch);
+
+
+$ch = curl_init("https://u240066.gluwebsite.nl/api/movie/" . $_GET['id']);
+
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2",
+    "Content-Type: application/json"
+]);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+
+if (curl_errno($ch)) {
+    exit("Er is iets misgegaan met de API");
+}
+
+$data = json_decode($response, true);
+
+if ($data['status'] !== "success") {
+    exit("Er is iets misgegaan met de API");
+}
+
+$movieData = $data['data'];
+
+curl_close($ch);
+
+$filledStars = round($movieData["movie"]["vote_average"] / 2);
+$stars = 5 - $filledStars;
+$totalStars = 5;
+
+
+
 ?>
 
 <body>
 
+
    <div id="groepbestelpagina">
 
-      <div id="kbbestel">
-         <h1>TICKETS BESTELLEN</h1>
-      </div>
 
-      <div id="bestelvlakken">
-         <div id="witvlakbestel">
+   <div id="kbbestel">
+      <h1>TICKETS BESTELLEN</h1>
+   </div>
+      
+   <div id="bestelvlakken">
+      <div id="witvlakbestel">
+         
+         <div id="filmselectie">
 
-            <div id="filmselectie">
-               <div id="filmtitel">FILMTITEL</div>
+ 
+               <div id="titelbox">
+                  <h2><?php echo $movieData["movie"]["title"];?></h2>
+               </div>
 
-               <select class="datums">
-                  <option class="datum" selected hidden>DATUM</option>
-                  <option value="15/09">15/09</option>
-                  <option value="17/09">17/09</option>
-                  <option value="22/09">22/09</option>
-                  <option value="24/09">24/09</option>
-               </select>
+            <!-- </div> -->
 
-               <select class="tijdstip">
-                  <option class="tijdstip" selected hidden>TIJDSTIP</option>
-                  <option value="13:00">13:00</option>
-                  <option value="15:30">15:30</option>
-                  <option value="19:00">19:00</option>
-                  <option value="21:30">21:30</option>
-               </select>
+            <select class="datums">
+                <option class="datum" selected hidden>DATUM</option>
+                <?php 
+                  for($i=0; $i<count($movieDates); $i++) {
+                     $date = $movieDates[$i]['date'];
+                     echo "<option value=".$date.">".$date."</option>";     
+                  }
+               ?>
+            </select>
 
-            </div>
+            <select class="tijdstip">
+                <option class="tijdstip" selected hidden>TIJDSTIP</option>
+
+                  <?php 
+                     // for($i=0; $i<count($movieTimes); $i++) {
+                     // $date = $movieTimes[$i]['time'];
+                     // echo "<option value=".$time.">".$time."</option>";     
+                     // }
+                  ?>
+            </select>
+         </div>
+    
+
+
+            <!-- </div> -->
 
             <h3>STAP 1: KIES JE TICKET</h3>
 
@@ -48,7 +156,10 @@ include("includes/topbar.php");
                   </div>
                </div>
 
+
+
                <div id="lijn1"></div>
+
 
                <div id="ticketBox">
 
@@ -71,18 +182,25 @@ include("includes/topbar.php");
                         <input type="number" class="aantal" name="aantal">
                         <input type="number" class="aantal" name="aantal">
                      </div>
+                     
                   </div>
                </div>
-               <div id="lijn2"></div>
-
-               <div id="vouchercode">VOUCHERCODE
-                  <form action="includes/InsertMovieScreening.php" method="POST">
-                     <input type="text" id="voucherbutton" placeholder="code">
-                     <input type="submit" value="Toevoegen" id="voucherknop">
-                  </form>
-               </div>
-
             </div>
+
+            <div id="lijn2">h</div>
+         <!-- </div> -->
+
+            <div id="vouchercode">
+               <p>VOUCHERCODE</p>
+               <form action="includes/InsertMovieScreening.php" method="POST">
+
+                  <input type="text" id="voucherbutton" placeholder="code">
+
+                  <input type="submit" value="Toevoegen" id="voucherknop">
+               </form>
+            </div>
+
+
 
             <h3>STAP 2: KIES JE STOEL</h3>
             <div id="filmdoekmidden">
@@ -101,40 +219,57 @@ include("includes/topbar.php");
                ?>
             </div>
 
-            <input type="text" id="stoelenkeuze" name="stoelen" value="leeg">
+
+         <!-- </div> -->
+
+
+
+         <div id="stoelmogelijkheden">
+            <div id="vrijstoel">VRIJ</div>
+            <div id="bezetstoel">BEZET</div>
+            <div id="joustoel">JOUW SELECTIE</div>
          </div>
 
+         <input type="text" id="stoelenkeuze" name="stoelen" placeholder="leeg">
+      </div>
+      
 
-         <div id="filmkeuze">
-            <div class="kleine-image-container">
-
-               <img class="kleine_image" src="assets/films/deadpool.jpg" alt="Kleine Image">
-
-               <p class="kleine-image-titel">JURASSIC WORLD:
-                  FALLEN KINGDOM </p>
-
-               <div class="kleine-image-stars">
-                  <span class="stars"></span>
-                  <span class="stars"></span>
-                  <span class="stars"></span>
-                  <span class="stars"></span>
-                  <span class="stars"></span>
-               </div>
-
-               <p class="kleine-image-release"> Release: 7-06-2018</p>
+      <div id="filmkeuze"> 
+      <div class="kleine-image-container">
+         <img class="kleine_image" src="https://image.tmdb.org/t/p/w500<?php echo $movieData["movie"]["poster_path"]; ?>"></img>
 
 
-               <p class="kleine-image-text">Welkom in Jurassic World: Fallen
-                  Kingdom! Favoriete personages
-                  keren terug in dit 3D actie-
-                  spektakel.</p>
+      <div class="informatie-film-bestelpagina">
+        <p class="kleine-image-titel"><?php echo $movieData["movie"]["title"]; ?></p>
 
+         <div class="kleine-image-stars">
+                <?php for ($i = 0; $i < $totalStars; $i++): ?>
+                    <?php if ($i < $filledStars): ?>
+                        <div class="star-filled">
+                            <img src="img/sterretje.svg" alt="Filled Star">
+                    </div>
+                    <?php else: ?>
+                        <div class="star-notfilled">
+                            <img src="img/sterretje-leeg.svg" alt="Empty Star">
+                    </div>
+                    <?php endif; ?>
+                <?php endfor; ?>
             </div>
-         </div>
+         
+         <div class="kleine-image-release">Released:&nbsp;<?php echo $movieData["movie"]["release_date"]; ?></div>
+
+
+         <div class="kleine-image-text"><?php echo $movieData["movie"]["overview"]; ?></div>
+
+      </div></div>
+                    </div>
 
 
 
 
+
+
+   </div>
 
       </div>
 
@@ -143,6 +278,7 @@ include("includes/topbar.php");
          <p class="form-text">STAP 3: CONTROLEER JE BESTELLING</p>
 
          <div class="tweede-kleine-image-container">
+
 
             <div class="tkki-container">
                <img class="tweede-kleine-image" src="assets\films\Jurassic-World_-Fallen-Kingdom.jpg"
@@ -231,6 +367,7 @@ include("includes/topbar.php");
 
 
 
+
       <input type="submit" value="AFREKENEN" class="afrekenen-button">
 
 
@@ -239,6 +376,7 @@ include("includes/topbar.php");
 
    </div>
    <script src="stoelselect.js"></script>
+
 </body>
 
 

@@ -14,7 +14,7 @@ body.home-page{
 body.films-pagina{
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url("assets/header/header_afbeelding.jpg");
-    background-attachment: no-repeat;
+    background-repeat: no-repeat;
 }
 
 header {
@@ -760,21 +760,21 @@ body {
 #Film-agenda-box{
     background-color: white;
     width: 86%;
-    height: 100px;
+    height: auto;
     
 }
 
 #film-text{
     color: #B97D46;
-    font-size: 50px;
-    padding: 20px;
+    font-size: 3vw;
+    padding: 2%;
     font-weight: bold;
 }
 
 .row{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1%;
 }
 
 label{
@@ -796,6 +796,7 @@ label{
     margin-top: 5px;
     padding-top: 5px;
     padding-right: 8px;
+    padding-left: 5px;
     font-weight: bold;
 }
 
@@ -820,6 +821,7 @@ label{
     height: 30px;
     background-color: white;
     margin-top: 5px;
+    padding-left: 5px;
     color: #B97D46;
     border: 0px;
     font-size: 14px;
@@ -865,41 +867,63 @@ h2{
 
 .info-knop{
     display: block;
-    width: 80%;
+    width: 10vw;
     height: auto;
     background-color: #B97D46;
     color: white;
     border: 0;
-    padding: 10px;
-    font-size: 14px;
+    padding: 4%;
+    font-size: 0.9vw;
     font-weight: bold;
     font-family: "Lato";  
     cursor: pointer;
-    margin-left: 10px;
-    margin-bottom: 10px;
+    margin-left: 6%;
+    margin-bottom: 5%;
     text-align: center;
     display: block;
+    align-self: flex-start;
+    margin-top: auto;
 }
 
 #poster-image{
     width: 100%;
 }
 
-p{
-    padding-left: 15px;
-    padding-right: 15px;
+p.release-tekst{
+    padding-top: 10%;
+    padding-left: 6%;
+    padding-right: 6%;
+    color: #666666;
 }
 
-h1{
-    padding-left: 15px;
-    padding-right: 15px;
+p.overview-tekst{
+    padding-top: 6%;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 10%;
+    color: #666666;
+    font-size: 1vw;
+}
+
+
+h1.titel-name{
+    padding-top: 6%;
+    padding-left: 6%;
+    padding-right: 6%;
     font-size: 18px;
     font-weight: bold;
+    color: #666666;
 }
 
-#fullstar-image{
-    height: 30px;
-    width: auto;
+.star{
+    width: 15%;
+    height: auto;
+    padding-left: 2%;
+    padding-top: 15%;
+}
+
+@media all and (max-width:768px){
+    
 }
 
 /*Einde film agenda*/

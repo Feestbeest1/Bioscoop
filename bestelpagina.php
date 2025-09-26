@@ -48,20 +48,6 @@
 
    curl_close($ch);
 
-   // haal data op voor tijden
-   //  $ch = curl_init("https://u240066.gluwebsite.nl/api/movie/" . $movieId . $date . "/times");
-   // curl_setopt($ch, CURLOPT_HTTPHEADER, [ "X-API-KEY: 9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2", "Content-Type: application/json"]);
-   // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-   // $response = curl_exec($ch);
-
-   // if (curl_errno($ch)) {
-   //    exit("Er is iets misgegaan met de API");
-   // }
-
-   // $data = json_decode($response, true);
-   // $movieTimes = $data['data'];
-   // curl_close($ch);
-
 
 $ch = curl_init("https://u240066.gluwebsite.nl/api/movie/" . $_GET['id']);
 
@@ -118,7 +104,7 @@ $totalStars = 5;
             <!-- </div> -->
 
             <select class="datums">
-                <option class="datum" selected hidden>DATUM</option>
+                <option value="" class="datum" selected hidden>DATUM</option>
                 <?php 
                   for($i=0; $i<count($movieDates); $i++) {
                      $date = $movieDates[$i]['date'];
@@ -128,14 +114,7 @@ $totalStars = 5;
             </select>
 
             <select class="tijdstip">
-                <option class="tijdstip" selected hidden>TIJDSTIP</option>
-
-                  <?php 
-                     // for($i=0; $i<count($movieTimes); $i++) {
-                     // $date = $movieTimes[$i]['time'];
-                     // echo "<option value=".$time.">".$time."</option>";     
-                     // }
-                  ?>
+                <option  value="" class="tijdstip" selected hidden>TIJDSTIP</option>
             </select>
          </div>
     
@@ -230,7 +209,7 @@ $totalStars = 5;
             <div id="joustoel">JOUW SELECTIE</div>
          </div>
 
-         <input type="text" id="stoelenkeuze" name="stoelen" placeholder="leeg">
+         
       </div>
       
 
@@ -297,6 +276,7 @@ $totalStars = 5;
                <div class="tkki-info-container">
                   <p class="tkki-info-text">Bioscoop:</p>
                   <p class="tkki-info-text">Wanneer:</p>
+                  <input type="text" id="stoelenkeuze" name="stoelen" placeholder="leeg">
                   <p class="tkki-info-text">Stoelen:</p>
                   <p class="tkki-info-text">Tickets: </p>
                </div>
@@ -378,7 +358,46 @@ $totalStars = 5;
    <script src="stoelselect.js"></script>
 
 </body>
+<script>
+   const movieId = <?php echo $movieId ?>;
+   const datumsElement = document.querySelector('select.datums');
+   const tijdElement = document.querySelector('select.tijdstip');
 
+   datumsElement.addEventListener('change', changeTimes);
+
+   function changeTimes(){
+      const selectedDatum = datumsElement.value;
+
+      if(selectedDatum === ""){
+         return;
+      }
+
+      fetch(`https://u240066.gluwebsite.nl/api/movie/${movieId}/${selectedDatum}/times?api_key=9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2`)
+         .then((response) => response.json())
+         .then((data) => {
+            tijdElement.innerHTML = '';
+            
+            if(data.status != 'success'){
+               console.log('Er is een fout opgetreden');
+               return;
+            }
+
+            const times = data.data;
+
+            times.forEach(timeData => {
+               const optionElement = document.createElement('option');
+               const splittedTime = timeData.time.split(':');
+               optionElement.value = timeData.movie_screening_id;
+               optionElement.innerHTML = splittedTime[0] + ':' + splittedTime[1];
+            
+               tijdElement.appendChild(optionElement);
+            });
+         });
+   }
+
+
+   changeTimes();
+</script>
 
 <?php
 include("includes/footer.php");

@@ -65,8 +65,6 @@
             const filmBox = document.createElement("div");
             filmBox.className = "film-box";
             container.appendChild(filmBox);
-
-        
         }
 
         window.addEventListener("load", getData);
@@ -117,6 +115,35 @@
         show(newMovieArray);
     });
 }
+    function renderStars(voteAverage) {
+    const container = document.createElement("div");
+    container.className = "stars-container";
+
+    const ratingOutOfFive = voteAverage / 2;
+    const fullStars = Math.floor(ratingOutOfFive);
+    const hasHalfStar = (ratingOutOfFive - fullStars) >= 0.25 && (ratingOutOfFive - fullStars) < 0.75;
+    const totalStars = 5;
+
+    for (let i = 0; i < totalStars; i++) {
+        const starImg = document.createElement("img");
+        starImg.className = "star";
+
+        if (i < fullStars) {
+            starImg.src = "img/sterretje.svg"; 
+            starImg.alt = "Filled Star";
+        } else {
+            starImg.src = "img/sterretje-leeg.svg"; 
+            starImg.alt = "Empty Star";
+        }
+
+        container.appendChild(starImg);
+    }
+
+    return container;
+}
+
+
+
 
         function show(data) {
         const filmBoxes = document.querySelectorAll(".film-box");
@@ -150,16 +177,23 @@
         
          //titel
         const titel= document.createElement("h1");
+        titel.className = "titel-name";
         titel.textContent = title;
         box.appendChild(titel);
 
+        //review
+        const stars = renderStars(vote);
+        box.appendChild(stars);
+
          //release
         const date= document.createElement("p");
+        date.className = "release-tekst";
         date.textContent = "Release: " + release;
         box.appendChild(date);
         
         //overview
         const over= document.createElement("p");
+        over.className = "overview-tekst";
         over.textContent = overview;
         box.appendChild(over);
 

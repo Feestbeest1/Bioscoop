@@ -1407,7 +1407,7 @@ input[type="email"] {
         width: 47.5%;
     }
 
-    .form-text {
+    .form-text, .form-text-2{
         font-size: 20px !important;
         width: auto !important;
     }
@@ -1547,4 +1547,121 @@ input[type="email"] {
 .naam-grid-container {
     width: 100%;
     margin-left: 3%;
+}
+
+.tweede-kleine-image-container{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #B97D46;
+    background-color: white;
+    height: 250px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.tweede-kleine-image {
+    width: 80%;
+    height: 90%;
+}
+
+.tkki-container{
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.tweede-kleine-image-titel {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 2vw;
+    color: #666666;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.tkki-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.tkki-kijkwijzer-container{
+    height: 50px;
+    width: 25%;
+    display: flex;
+    gap: 10px;
+}
+
+.tkki-kijkwijzer{
+    width: 40px;
+    height: 40px;
+}
+
+.tkki-info-container{
+    flex-direction: column;
+    display: flex;
+    gap: 0px;
+}
+
+.tkki-info-text{
+    padding: 0;
+    margin: 0px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.tkki-totaal{
+    padding: 0;
+    font-size: 14px;
+    color: #666666;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .tweede-kleine-image-container{
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .tkki-container{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tweede-kleine-image {
+        width: 80%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .tkki-kijkwijzer-container{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .tkki-info-text{
+        font-size: 20px;
+    }
+
+    .tkki-totaal{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .tkki-container{
+        width: 50%;
+    }
+}
+
+.form-text-2{
+    color: #B97D46;
+    font-size: 30px;
+    min-width: 500px;
 }

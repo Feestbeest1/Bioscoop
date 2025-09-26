@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Bioscoop</title>
 </head>
-<body>
+<body class= films-pagina>
     
 <?php 
    include("includes/header.php");

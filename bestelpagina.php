@@ -284,6 +284,7 @@ include("includes/topbar.php");
 
 </body>
 
+<script src="script.js"></script>
 
 <?php
 include("includes/footer.php");

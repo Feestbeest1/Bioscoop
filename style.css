@@ -1263,7 +1263,7 @@ grid-row-gap: 6px;
 }
 
 .container-controle{
-    border: 2px solid #B97D46;
+    border: 3px solid #B97D46;
     display: flex;
 }
 
@@ -1271,6 +1271,12 @@ grid-row-gap: 6px;
     padding: 10px;
     height: 100%;
     width: 190px;
+    margin-bottom: 0;
+}
+
+.controle-bestelling-container{
+    color: #666666;
+    font-weight: bold;
 }
 
 .tekstding {
@@ -1286,9 +1292,9 @@ grid-row-gap: 6px;
 }
 
 .kijkwijzer-container img{ 
-    width: 50px;
+    width: 45px;
     height: 100%;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 0px 5px 0px;
 }
 
 
@@ -1365,10 +1371,11 @@ grid-row-gap: 6px;
 
 .kleine-image-container {
     background-color: white;
-    height: 750px;
+    height: 600px;
     width: 215px;
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
 }
 
 .kleine_image {
@@ -1408,10 +1415,11 @@ grid-row-gap: 6px;
     height: 2vw;
     margin-top: 0.5vw;
     margin: 0;
+    font-weight: bold;
 }
 
 .kleine-image-text {
-    font-size: 10px;
+    font-size: 14px;
     margin: 0px;
     color: #666666;
     word-break: break-word;

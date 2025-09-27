@@ -176,6 +176,21 @@ include("includes/topbar.php");
                 <img src="<?php echo $movieData["movie"]["warnings"][$x]['icon'] ?>"></img>
                 <?php
             }?>
+<div class="controle-bestelling-container">
+      <div class="zaal-info">Bioscoop: Leerdam (Zaal<?php echo $movieData['cinema']['auditorium_number']; ?>)</div>
+      <div class="start-time">Wanneer:<?php  echo $movieData['cinema']['start_time']; ?></div>
+      <div class="stoelen-keuze">Stoelen:<?php $stoelen   = explode(',', $_POST['stoelen']);?></div>
+      <div class="ticket-aantal">Tickets:<?php $tickets   = $_POST['tickets']; ?></div>
+      <div class="totaal-aantal"><?php $totaal    = 0; ?></div>
+   <?php
+
+      foreach ($movieData['cinema']['prices'] as $p) {
+         $slug = strtolower(strtok($p['name'], ' '));
+         $aantal = $tickets[$slug] ?? 0;
+         $totaal += $aantal * (float)$p['amount'];
+      }
+   ?>     
+</div>     
         </div>
             </div>
       </div>
@@ -207,6 +222,8 @@ include("includes/topbar.php");
 
 
          <div class="kleine-image-text"><?php echo $movieData["movie"]["overview"]; ?></div>
+
+
 
       </div></div>
                     </div>

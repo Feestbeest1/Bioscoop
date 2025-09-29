@@ -253,108 +253,108 @@ $totalStars = 5;
       </div>
 
       <div class="bestelpagina">
-
-         <p class="form-text">STAP 3: CONTROLEER JE BESTELLING</p>
-
-         <div class="tweede-kleine-image-container">
-
-
-            <div class="tkki-container">
-               <img class="tweede-kleine-image" src="assets\films\Jurassic-World_-Fallen-Kingdom.jpg"
-                  alt="Kleine Image">
-
-
-            </div>
-            <div class="tkki-info">
-               <p class="tweede-kleine-image-titel">JURASSIC WORLD:
-                  FALLEN KINGDOM </p>
-               <div class="tkki-kijkwijzer-container">
-
-                  <img class="tkki-kijkwijzer" src="" alt="Kleine Image">
-
-               </div>
-               <div class="tkki-info-container">
-                  <p class="tkki-info-text">Bioscoop:</p>
-                  <p class="tkki-info-text">Wanneer:</p>
-                  <input type="text" id="stoelenkeuze" name="stoelen" placeholder="leeg">
-                  <p class="tkki-info-text">Stoelen:</p>
-                  <p class="tkki-info-text">Tickets: </p>
-               </div>
-               <p class="tkki-totaal">Totaal # ticket: #####</p>
-
-            </div>
-
+ 
+      <p class="form-text">STAP 3: CONTROLEER JE BESTELLING</p>
+ 
+      <div class="tweede-kleine-image-container">
+ 
+ 
+         <div class="tkki-container">
+            <img class="tweede-kleine-image"
+               src="https://image.tmdb.org/t/p/w500<?php echo $movieData["movie"]["poster_path"]; ?>"
+               alt="Kleine Image">
+ 
+ 
          </div>
-
-      </div>
-
-
-      <div class="bestelpagina">
-         <p class="form-text">STAP 4: VUL JE GEGEVENS IN</p>
-
-         <div id="form-input">
-            <form action="bestelpagina.php" method="post">
-               <div class="naam-grid-container">
-                  <div class="naam-grid">
-                     <input type="text" name="naam" placeholder="Achternaam" required>
-                     <input type="text" name="voor_naam" placeholder="Voornaam" required>
-                  </div>
-               </div>
-               <div class="form-row">
-                  <input type="email" name="email" placeholder="E-mail" required class="form-full">
-               </div>
-
-               <div class="form-row">
-                  <input type="email" name="email_2" placeholder="E-mail" required class="form-full">
-               </div>
-
-               <p class="form-text">STAP 5: KIES JE BETAALWIJZE</p>
-
-               <!-- payment options -->
-               <div class="card-select-row">
-                  <label class="card-option">
-                     <input type="radio" name="card_type" value="visa" required>
-                     <img src="img/nationale_bioscoop_bon.png" alt="Visa" class="card-img">
-                  </label>
-                  <label class="card-option">
-                     <input type="radio" name="card_type" value="mastercard">
-                     <img src="img/maestro.png" alt="Mastercard" class="card-img">
-                  </label>
-                  <label class="card-option">
-                     <input type="radio" name="card_type" value="amex">
-                     <img src="img/ideal.png" alt="Amex" class="card-img">
-                  </label>
-               </div>
-               <!-- end payment options -->
-
-               <!-- voorwaarden block now separate -->
-               <div class="voorwaarden-container">
-                  <div class="form-row checkbox-row" style="align-items:center;">
-                     <input type="checkbox" id="voorwaarden" name="voorwaarden" required style="margin-right:8px;">
-                     <label for="voorwaarden" style="margin:0;">
-                        Ik accepteer de <a href="#" target="_blank">algemene voorwaarden</a>
-                     </label>
-                  </div>
-
-                  <div class="form-row">
-
-                  </div>
-               </div>
-
-            </form>
+         <div class="tkki-info">
+            <p class="tweede-kleine-image-titel"><?php echo $movieData["movie"]["title"]; ?></p>
+            <div class="tkki-kijkwijzer-container">
+ 
+               <img class="tkki-kijkwijzer" src="" alt="Kleine Image">
+ 
+            </div>
+            <div class="tkki-info-container">
+               <p class="tkki-info-text">Bioscoop: AnnexBios | Leerdam</p>
+               <p class="tkki-info-text">Wanneer: <span id="previewDatum"></span> <span id="previewTijd"></span></p>
+               <p class="tkki-info-text">Stoelen: <span id="previewStoelen"></span></p>
+               <p class="tkki-info-text">Tickets: <span id="previewTickets"></span></p>
+               <p class="tkki-totaal">Totaal <span id="previewTotaal">0</span>  ticket: €<span id="previewPrijs">0.00</span></p>
+            </div>
+ 
          </div>
+ 
       </div>
-
-
-
-
-      <input type="submit" value="AFREKENEN" class="afrekenen-button">
+ 
+   </div>
+ 
+ 
+   <div class="bestelpagina">
+      <p class="form-text">STAP 4: VUL JE GEGEVENS IN</p>
+ 
+      <div id="form-input">
+         <form action="bestelpagina.php" method="post">
+            <div class="naam-grid-container">
+               <div class="naam-grid">
+                  <input type="text" name="naam" placeholder="Achternaam" required>
+                  <input type="text" name="voor_naam" placeholder="Voornaam" required>
+               </div>
+            </div>
+            <div class="form-row">
+               <input type="email" name="email" placeholder="E-mail" required class="form-full">
+            </div>
+ 
+            <div class="form-row">
+               <input type="email" name="email_2" placeholder="E-mail" required class="form-full">
+            </div>
+ 
+            <p class="form-text-2">STAP 5: KIES JE BETAALWIJZE</p>
+ 
+            <!-- payment options -->
+            <div class="card-select-row">
+               <label class="card-option">
+                  <input type="radio" name="card_type" value="visa" required>
+                  <img src="img/nationale_bioscoop_bon.png" alt="Visa" class="card-img">
+               </label>
+               <label class="card-option">
+                  <input type="radio" name="card_type" value="mastercard">
+                  <img src="img/maestro.png" alt="Mastercard" class="card-img">
+               </label>
+               <label class="card-option">
+                  <input type="radio" name="card_type" value="amex">
+                  <img src="img/ideal.png" alt="Amex" class="card-img">
+               </label>
+            </div>
+            <!-- end payment options -->
+ 
+            <!-- voorwaarden block now separate -->
+            <div class="voorwaarden-container">
+               <div class="form-row checkbox-row" style="align-items:center;">
+                  <input type="checkbox" id="voorwaarden" name="voorwaarden" required style="margin-right:8px;">
+                  <label for="voorwaarden" style="margin:0;">
+                     Ik accepteer de <a href="#" target="_blank">algemene voorwaarden</a>
+                  </label>
+               </div>
+ 
+               <div class="form-row">
+ 
+               </div>
+            </div>
+ 
+         </form>
+      </div>
+   </div>
+ 
+ 
+ 
+ 
+   <input type="submit" value="AFREKENEN" class="afrekenen-button">
 
 
 
 
 
    </div>
+   <script src="script.js"></script>
    <script src="stoelselect.js"></script>
 
 </body>

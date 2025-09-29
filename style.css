@@ -1,13 +1,20 @@
 html,
 body {
+    background-color: black;
+    margin: 0;
+    font-family: "Lato";
+}
 
+body.home-page{
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url("assets/header/header_afbeelding.jpg");
     background-repeat: no-repeat;
-    background-color: black;
-    margin: 0;
-    padding: 0;
-    font-family: "Lato";    
+}
+
+body.films-pagina{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("assets/header/header_afbeelding.jpg");
+    background-repeat: no-repeat;
 }
 
 header {
@@ -157,6 +164,8 @@ li .films option {
     margin-top: 40px;
     height: 250px;
     padding-left: 35px;
+    gap: 50px;
+    padding-top: 16px;
 }
 
 #welkomsblok h1 {
@@ -165,6 +174,7 @@ li .films option {
     text-align: left;
     font-family: 'Lato';
     letter-spacing: 2px;
+    margin-left: -15px;
 }
 
 #welkomsblok h4 {
@@ -173,10 +183,20 @@ li .films option {
     font-family: 'Lato';
 }
 
-#welkomsblok button {
+/* #welkomsblok button {
     height: 45px;
     width: 220px;
     color: #B97D46;
+} */
+
+#button{
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 222px;
+    color: #B97D46;
+    background-color: white;
+    padding: 5px;
 }
 
 /* contactblok + kaartblok */
@@ -201,7 +221,7 @@ li .films option {
     display: flex;
     flex-direction: row;
     background-color: white;
-    width: 78%;
+    width: 80%;
     margin-top: 40px;
     height: 470px;
     padding: 4px;
@@ -212,7 +232,7 @@ li .films option {
 .google-maps {
     display: flex;
     flex-direction: column;
-    width: 630px;
+    width: 600px;
 }
 
 #googlemap {
@@ -224,8 +244,8 @@ li .films option {
     background-color: #B97D46;
     color: white;
     margin-left: 30px;
-    width: 600px;
-    height: 188px;
+    width: 570px;
+    height: 195px;
     font-family: 'Lato';
 }
 
@@ -238,7 +258,7 @@ li .films option {
 }
 
 #fotoblok img {
-    width: 466px;
+    width: 570px;
     height: 419px;
     padding-right: 20px;
     padding-top: 7px;
@@ -782,21 +802,21 @@ body {
 #Film-agenda-box{
     background-color: white;
     width: 86%;
-    height: 100px;
+    height: auto;
     
 }
 
 #film-text{
     color: #B97D46;
-    font-size: 50px;
-    padding: 20px;
+    font-size: 3vw;
+    padding: 2%;
     font-weight: bold;
 }
 
 .row{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1%;
 }
 
 label{
@@ -818,6 +838,7 @@ label{
     margin-top: 5px;
     padding-top: 5px;
     padding-right: 8px;
+    padding-left: 5px;
     font-weight: bold;
 }
 
@@ -832,6 +853,9 @@ label{
     height: auto;
     width: 16%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
 }
 
 .categorie-box{
@@ -839,6 +863,7 @@ label{
     height: 30px;
     background-color: white;
     margin-top: 5px;
+    padding-left: 5px;
     color: #B97D46;
     border: 0px;
     font-size: 14px;
@@ -854,10 +879,9 @@ label{
 }
 
 #filmsContainer{
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-left: 11%;
+    margin-right: 210px;
     padding-bottom: 60px;
-    /* display: grid; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -1038,17 +1062,17 @@ h1{
 #groepbestelpagina{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: center;
+    width: 100%;
 }
 
 #kbbestel{
     display: flex;
-    /* align-items: center;  */
+    align-items: center;
     justify-content: start;
     background-color: white;
     margin-top: 135px;
-    margin-left: 16%;
-    width: 69.5%;
+    width: 69%;
     height: 100px;
 }
 
@@ -1061,7 +1085,7 @@ h1{
     display: flex;
     flex-direction: row;
     gap: 20px;
-    width: 80%;
+    width: 69%;
 }
 
 #witvlakbestel{
@@ -1071,7 +1095,6 @@ h1{
     width: 80%;
     margin-top: 50px;
     padding: 20px;
-    margin-left: 20%;
 }
 #witvlakbestel h3{
     color: #B97D46;
@@ -1086,16 +1109,24 @@ h1{
     gap: 20px;
 }
 
-#filmtitel{
+#filmselectie p{
     display: flex;
     background-color: white;
     color: #B97D46;
     border: 1px solid #B97D46;
     width: 80px;
     height: 22px;
+    gap: 20px;
+}
+#titelbox h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #B97D46;
+    margin: 0;
+    border: 1px solid #B97D46;
 }
 
-.datums{
+ .datums{
     color:#B97D46;
     border: 1px solid #B97D46;
     font-size: 15px;
@@ -1104,19 +1135,21 @@ h1{
     color:#B97D46;
     border: 1px solid #B97D46;
     font-size: 15px;
-}
+} 
 
 #lijn1{
     width: 100%;
     height: 2px;
     background-color: black;
     margin-bottom: 5px;
+    color: white;
 }
 #lijn2{
     width: 100%;
     height: 2px;
     background-color: black;
     margin-bottom: 5px;
+    color: white;
 }
 
 #ticketinfolinks{
@@ -1158,6 +1191,7 @@ h1{
 #ticketBox{
     display: flex;
     justify-content: space-between;
+    padding-bottom: 10px;
 }
 
 .aantal{
@@ -1181,18 +1215,25 @@ h1{
 
 #vouchercode{
     display: flex;
-    gap: 10px;
+    align-items: center;
+    /* gap: 10px; */
+    padding-top: 10px;
+}
+
+#vouchercode p{
+    padding: 1px;
 }
 
 #voucherbutton{
-    width: 593px;
+    width: 433px;
     border-color: #B97D46;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+    height: 16px;
 }
 
 #voucherknop{
     margin-top: 5px;
-    margin-left: 70px;
+    margin-left: 7px;
     width: 180px;
     color:white;
     background-color: #B97D46;
@@ -1222,8 +1263,107 @@ grid-row-gap: 6px;
 }
 
 .stoel{
-    background-color: red;
-    
+    background-color: #e6a967;
+    width: 45px;
+    height: 33px;
+    border-radius: 5px;
+}
+.stoelkussen{
+    width: 20px;
+    height: 20px;
+    background-color: #B97D46;
+}
+
+#stoelmogelijkheden{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#vrijstoel{
+background-color: #e6a967;
+    color: white;
+    width: 100px;
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#bezetstoel{
+    background-color: #B97D46;
+    color: white;
+    width: 100px;
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#joustoel{
+    background-color: #8e500b;
+    color: white;
+    width: 150px;
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media (max-width: 825px){
+    #voucherbutton{
+        width: 100px;
+    }
+    #voucherknop{
+        width: 75px;
+        margin-left: 33px;
+    }
+    #vouchercode p {
+    padding: 1px;
+    font-size: 10px;
+    padding-bottom: 25px;
+    }
+}
+@media (max-width: 585px){
+    #titelbox h2{
+        font-size: 15px;
+    }
+    .datums{
+        width: 50px;
+        font-size: 8px;
+    }
+    .tijdstip{
+        width: 70px;
+        font-size: 8px;
+    }
+    #ticketinfolinks{
+        justify-content: space-around;
+    }
+    #ticketinforechts{
+        justify-content: space-around;
+    }
+    #witvlakbestel h3{
+        padding-left: 18px;
+    }
+    #ticketprijzen{
+        padding-right: 20px;
+    }
+    #tekstenTicket{
+        padding-right: 10px;
+    }
+    #ticketinforechts P {
+    padding-right: 14px;
+    margin-left: 24px;
+}
+}
+@media(max-width: 888px){
+    .stoel{
+        width: 100%;
+        font-size: 5px;
+    }
+    #stoelmogelijkheden{
+        font-size: 14px;
+    }
 }
 
 /* Force voorwaarden below */
@@ -1426,16 +1566,17 @@ grid-row-gap: 6px;
     hyphens: auto;
     padding-top: 10px;
     padding-right: 15px;
+    padding-bottom: 10px;
 }
 
 .bestelpagina {
     flex-direction: column;
     display: flex;
     background-color: white;
-    width: 53.65%;
+    width: 53.5%;
     height: 100%;
     padding-bottom: 20px;
-    margin-left: 16%;
+    margin-left: 236px;
 }
 
 @media (max-width: 600px) {
@@ -1593,8 +1734,8 @@ input[type="email"] {
 
 .afrekenen-button {
     background-color: #B97D46;
-    margin-left: 10%;
-    width: 80%;
+    margin-left: 236px;
+    width: 69%;
     height: 7vw;
     color: white;
     font-size: 45px;

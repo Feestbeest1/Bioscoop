@@ -1,5 +1,17 @@
-<body>
-    <?php 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Bioscoop</title>
+</head>
+<body class= films-pagina>
+    
+<?php 
    include("includes/header.php");
    include("includes/topbar.php");
 ?>
@@ -39,15 +51,13 @@
         <label>
         <!-- <input type="radio" name="film-filter" id="categorie"> -->
         <select class="categorie-box">
-            <option>CATEGORIE</option>
-            <option>ACTIE</option>
-            <option>AVONTUUR</option>
-            <option>KOMEDIE</option>
-            <option>FANTASIE</option>
-            <option>DRAMA</option>
-            <option>HORROR</option>
-            <option>ROMANTIEK</option>
-            <option>THRILLER</option>
+            <option value="" selected>CATEGORIE</option>
+            <option value="28">ACTION</option>
+            <option value="12">ADVENTURE</option>
+            <option value="16">ANIMATION</option>
+            <option value="35">COMEDY</option>
+            <option value="80">CRIME</option>
+            <option value="99">DOCUMENTARY</option>
         </select>
 </label>
     </div>
@@ -60,20 +70,164 @@
     <div id="filmsContainer"></div>
 
     <script>
-        const container = document.getElementById("filmsContainer");
-        for (let i = 0; i < 24; i++) {
+       const container = document.getElementById("filmsContainer");
+        for (let i = 0; i < 12; i++) {
             const filmBox = document.createElement("div");
             filmBox.className = "film-box";
             container.appendChild(filmBox);
         }
+
+        window.addEventListener("load", getData);
+
+        const selectCategorieElement = document.querySelector('.categorie-box');
+
+        selectCategorieElement.addEventListener("change", function(){
+            const selectedValue = selectCategorieElement.value;
+            console.log(selectedValue);
+            getData(selectedValue);
+        });
+        
+
+        function getData(genreId = ""){
+        const key= "9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2";
+        let url = `https://u240066.gluwebsite.nl/api/movies?api_key=${key}`;
+
+        if (!isNaN(parseInt(genreId))) {
+            url = url + `&genres=${genreId}`;
+            console.log(url);
+        }
+
+        fetch(url)
+        .then((raw) => raw.json()) 
+        .then((data) => {
+        console.log(data.data);
+
+        const moviesData = data.data;
+        let newMovieArray = [];
+        
+        if(!isNaN(parseInt(genreId))){
+            let usedMovies = {};
+
+            for(let i = 0; i < moviesData.length; i++){
+                const movieId = moviesData[i].movie_id;
+
+                if(!usedMovies[movieId]){
+                    usedMovies[movieId] = true;
+                    newMovieArray.push(moviesData[i]);
+                }
+            }
+        }else{
+            newMovieArray = moviesData;
+        }
+
+        console.log(newMovieArray);
+
+        show(newMovieArray);
+    });
+}
+    function renderStars(voteAverage) {
+    const container = document.createElement("div");
+    container.className = "stars-container";
+
+    const ratingOutOfFive = voteAverage / 2;
+    const fullStars = Math.floor(ratingOutOfFive);
+    const hasHalfStar = (ratingOutOfFive - fullStars) >= 0.25 && (ratingOutOfFive - fullStars) < 0.75;
+    const totalStars = 5;
+
+    for (let i = 0; i < totalStars; i++) {
+        const starImg = document.createElement("img");
+        starImg.className = "star";
+
+        if (i < fullStars) {
+            starImg.src = "img/sterretje.svg"; 
+            starImg.alt = "Filled Star";
+        } else {
+            starImg.src = "img/sterretje-leeg.svg"; 
+            starImg.alt = "Empty Star";
+        }
+
+        container.appendChild(starImg);
+    }
+
+    return container;
+}
+
+
+
+
+        function show(data) {
+        const filmBoxes = document.querySelectorAll(".film-box");
+        
+        for(let i = 0; i < filmBoxes.length; i++){
+            const box = filmBoxes[i];
+            box.innerHTML = "";
+            box.style.cssText = 'display: none;';
+        }
+
+        for(let i = 0; i < filmBoxes.length && i < data.length; i++){
+        
+        const box = filmBoxes[i];
+        box.style.cssText = '';
+        
+        const movieId = data[i].movie_id;
+        const title = data[i].movie.title;
+        const poster = data[i].movie.poster_path;
+        const overview = data[i].movie.overview;
+        const vote = data[i].movie.vote_average;
+        const release = data[i].movie.release_date;
+
+
+        //foto
+        console.log(data[i].genre);
+        const image= document.createElement("IMG");
+        image.src = `https://image.tmdb.org/t/p/w500/${poster}`;
+        image.alt = title;
+        image.id = "poster-image";
+        box.appendChild(image);
+        
+         //titel
+        const titel= document.createElement("h1");
+        titel.className = "titel-name";
+        titel.textContent = title;
+        box.appendChild(titel);
+
+        //review
+        const stars = renderStars(vote);
+        box.appendChild(stars);
+
+         //release
+        const date= document.createElement("p");
+        date.className = "release-tekst";
+        date.textContent = "Release: " + release;
+        box.appendChild(date);
+        
+        //overview
+        const over= document.createElement("p");
+        over.className = "overview-tekst";
+        over.textContent = overview;
+        box.appendChild(over);
+
+        const infoButton = document.createElement("info-knop");
+            infoButton.className = "info-knop";
+            infoButton.textContent = "MEER INFO & TICKETS";
+
+            infoButton.addEventListener("click", () => {
+
+                window.location.href = `http://localhost/Bioscoop/filmdetailpagina.php?id=${data[i].id}`;
+});
+  
+        box.appendChild(infoButton);
+
+        }
+
+};
         </script>
       </div>      
         </div>
     </div>
 
 <?php 
-   include 'footer.php';
+   include 'includes/footer.php';
 ?>
 </body>
 </html>
-

@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-
-
-
 <div class="footer">
   <div class="footer_container_1">
   <img class="footer_logo_img" src="img/logo_hoofd.png" alt="logo">
@@ -20,10 +7,10 @@
   <div class="footer_container_2">
   <p class="footer_text_2_big">NAVIGEER</p>
   <p class="footer_text_2">
-  <a href="">Werken bij</a><br>
-   <a href="">Veelgestelde vragen</a><br>
-   <a href="">Vestigingen</a><br>
-   <a href="">Contact</a><br>
+  <a href="https://jobs.redbull.com/nl-nl">Werken bij</a><br>
+   <a href="https://jobs.redbull.com/nl-nl/career-faq">Veelgestelde vragen</a><br>
+   <a href="https://jobs.redbull.com/nl-nl/locations">Vestigingen</a><br>
+   <a href="https://www.redbull.com/nl-nl/energydrink/contact-assistant">Contact</a><br>
   </p>
 </div>
 <div class="footer_container_3">

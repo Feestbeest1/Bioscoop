@@ -2,14 +2,14 @@ const datumSelect = document.querySelector('.datums');
 const tijdSelect = document.querySelector('.tijdstip');
 const aantalInputs = document.querySelectorAll('.aantal'); // 0=Normaal,1=Kind,2=65+
 const stoelenGrid = document.querySelector('.parent');
-const stoelenInput = document.getElementById('stoelenkeuze');
+const stoelenInput = document.querySelector('.stoelen-keuze span');
  
 const previewDatum = document.getElementById('previewDatum');
 const previewTijd = document.getElementById('previewTijd');
 const previewStoelen = document.getElementById('previewStoelen');
-const previewTickets = document.getElementById('previewTickets');
-const previewTotaal = document.getElementById('previewTotaal');
-const previewPrijs = document.getElementById('previewPrijs');
+const previewTickets = document.querySelector('ticket-aantal span');
+const previewTotaal = document.querySelector('.totaal-aantal .count');
+const previewPrijs = document.querySelector('.totaal-aantal .price');
  
 const ticketPrices = [9,5,7]; // Normaal, Kind, 65+
  
@@ -32,8 +32,8 @@ function updateTickets() {
     });
  
     previewTotaal.textContent = totalTickets;
-    previewTickets.textContent = ticketDetails.join(', ');
-    previewPrijs.textContent = totalPrice.toFixed(2);
+    previewTickets.innerHTML = ticketDetails.join(', ');
+    previewPrijs.innerHTML = totalPrice.toFixed(2);
 }
  
 aantalInputs.forEach(input => input.addEventListener('input', updateTickets));
@@ -50,7 +50,7 @@ stoelenGrid.addEventListener('click', e => {
             selectedSeats.push(seatId);
             e.target.style.backgroundColor='orange';
         }
-        stoelenInput.value = selectedSeats.join(', ');
-        previewStoelen.textContent = selectedSeats.join(', ');
+        stoelenInput.textContent = selectedSeats.join(', ');
+        // previewStoelen.textContent = selectedSeats.join(', ');
     }
 });

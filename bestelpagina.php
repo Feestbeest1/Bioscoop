@@ -175,6 +175,8 @@ $totalStars = 5;
 
                   <input type="text" id="voucherbutton" placeholder="code">
 
+                  <input type="hidden" name="stoelen" id="stoelenkeuze">
+
                   <input type="submit" value="Toevoegen" id="voucherknop">
                </form>
             </div>

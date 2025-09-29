@@ -16,7 +16,7 @@
         
        <label>
         <!-- <input type="radio" name="film-filter" id="categorie"> -->
-        <div class="box">
+        <div class="box-1">
             <label>
                 <input type="radio" name="film-filter" id="week">
                 FILMS
@@ -25,20 +25,20 @@
 </h2>
         </select>
 </label>
-        <div class="box">
+        <div class="box-2">
             <label>
                 <input type="radio" name="film-filter" id="week">
                 DEZE WEEK
             </label>
         </div>
-        <div class="box">
+        <div class="box-3">
             <label>
                 <input type="radio" name="film-filter" id="vandaag">
                 VANDAAG
             </label>
         </div>
         <label>
-        <!-- <input type="radio" name="film-filter" id="categorie"> -->
+        
         <select class="categorie-box">
             <option value="" selected>CATEGORIE</option>
             <option value="28">ACTION</option>

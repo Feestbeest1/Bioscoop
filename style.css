@@ -789,7 +789,7 @@ label{
     margin: 0 auto;
 }
 
-.box{
+.box-1{
     width: auto;
     height: 25px;
     background-color: white;
@@ -799,6 +799,29 @@ label{
     padding-left: 5px;
     font-weight: bold;
 }
+
+.box-2{
+    width: auto;
+    height: 25px;
+    background-color: white;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.box-3{
+    width: auto;
+    height: 25px;
+    background-color: white;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
 
 .column{
     width: 45%;
@@ -813,7 +836,6 @@ label{
     background-color: white;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
 }
 
 .categorie-box{
@@ -905,7 +927,6 @@ p.overview-tekst{
     font-size: 1vw;
 }
 
-
 h1.titel-name{
     padding-top: 6%;
     padding-left: 6%;
@@ -923,7 +944,81 @@ h1.titel-name{
 }
 
 @media all and (max-width:768px){
-    
+    #filmsContainer{
+    flex-direction: column;
+}
+
+.film-box{
+    margin-left: 15%;
+    width: 70%;
+}
+
+p.overview-tekst{
+    font-size: 3vw;
+}
+
+.star{
+    width: 14%;
+    height: auto;
+}
+
+.info-knop{
+    width: 44vw;
+    font-size: 3vw;
+}
+
+#Film-agenda-box{
+    width: 60%;
+}
+
+#film-text{
+    font-size: 5vw;
+    padding: 2vw;
+}
+
+#line{
+    width: 25px;
+    height: 5px;
+    margin: 5px 0;
+}
+
+.box-1{
+    font-size: 12px;
+    width: 45px;
+    height: 22px;
+    padding-top: 3px;
+}
+
+.box-2{
+    font-size: 12px;
+    width: 82px;
+    height: 22px;
+    padding-top: 3px;
+}
+
+.box-3{
+    font-size: 12px;
+    width: 70px;
+    height: 22px;
+    padding-top: 3px;
+}
+
+.column{
+    margin-left: 5%;
+}
+
+.categorie-box{
+    max-width: 90px;
+    height: 25px;
+    font-size: 12px;
+}
+
+.row{
+    width: 150%;
+}
+
+
+
 }
 
 /*Einde film agenda*/

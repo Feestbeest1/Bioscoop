@@ -1544,16 +1544,15 @@ background-color: #e6a967;
 input[type="text"],
 input[type="email"] {
     border: 2px solid #b97d46;
-    width: 41%;
+    width: 40%;
     height: 40px;
-    margin-left: 20px;
 }
 
 input[type="email"] {
     margin-top: 5px;
-    width: 98%;
+    width: 100%;
     font-family: 'Lato', sans-serif;
-    margin-left: 20px;
+    margin-left: 27px;
 }
 
 @media (max-width: 600px) {
@@ -1816,7 +1815,9 @@ input[type="email"] {
 }
  
 .form-text-2{
+    font-weight: bold;
     color: #B97D46;
     font-size: 30px;
     min-width: 500px;
+    margin-left: 20px;
 }

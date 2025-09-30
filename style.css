@@ -220,7 +220,7 @@ li .films option {
     display: flex;
     flex-direction: row;
     background-color: white;
-    width: 80%;
+    width: 78%;
     margin-top: 40px;
     height: 470px;
     padding: 4px;
@@ -231,7 +231,7 @@ li .films option {
 .google-maps {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 650px;
 }
 
 #googlemap {
@@ -243,8 +243,8 @@ li .films option {
     background-color: #B97D46;
     color: white;
     margin-left: 30px;
-    width: 570px;
-    height: 195px;
+    width: 620px;
+    height: 188px;
     font-family: 'Lato';
 }
 
@@ -257,7 +257,7 @@ li .films option {
 }
 
 #fotoblok img {
-    width: 570px;
+    width: 620px;
     height: 419px;
     padding-right: 20px;
     padding-top: 7px;
@@ -329,6 +329,14 @@ li .films option {
         width: 220px;
         height: 188px;
         font-family: 'Lato';
+    }
+        #fotoblok img {
+        width: 285px;
+        height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
     }
 }
 

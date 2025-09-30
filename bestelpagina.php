@@ -252,10 +252,49 @@ $totalStars = 5;
 
                   <input type="submit" value="AFREKENEN" class="afrekenen-button">
                </form>
+
+               
             </div>
          </div>
+         
+      <div id="filmkeuze">
+         <div class="kleine-image-container">
+            <img class="kleine_image" src="https://image.tmdb.org/t/p/w500<?php echo $movieData["movie"]["poster_path"]; ?>">
+            <div id="filmkeuze">
+
+
+                  <div class="informatie-film-bestelpagina">
+                     <p class="kleine-image-titel"><?php echo $movieData["movie"]["title"]; ?></p>
+
+                     <div class="kleine-image-stars">
+                        <?php for ($i = 0; $i < $totalStars; $i++): ?>
+                           <?php if ($i < $filledStars): ?>
+                              <div class="star-filled">
+                                 <img src="img/sterretje.svg" alt="Filled Star">
+                              </div>
+                           <?php else: ?>
+                              <div class="star-notfilled">
+                                 <img src="img/sterretje-leeg.svg" alt="Empty Star">
+                              </div>
+                           <?php endif; ?>
+                        <?php endfor; ?>
+                     </div>
+
+                     <div class="kleine-image-release">Released:&nbsp;<?php echo $movieData["movie"]["release_date"]; ?></div>
+
+
+                     <div class="kleine-image-text"><?php echo $movieData["movie"]["overview"]; ?></div>
+
+
+
+                  </div>
+               </div>
+            </div>
+                           </div>
       </div>
    </div>
+
+   
 
    <script src="stoelselect.js"></script>
 </body>

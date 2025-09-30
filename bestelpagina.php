@@ -87,13 +87,20 @@ $totalStars = 5;
                <select class="datums">
                   <option value="" class="datum" selected hidden>DATUM</option>
                   <?php
-                  foreach ($movieDates as $d) {
-                     echo "<option value='" . $d['date'] . "'>" . $d['date'] . "</option>";
+                  for($i=0; $i<count($movieDates); $i++) {
+                     $date = $movieDates[$i]['date'];
+                     echo "<option value=".$date.">".$date."</option>";     
                   }
                   ?>
                </select>
 
                <select class="tijdstip">
+                  <?php 
+                     // for($i=0; $i<count($movieTimes); $i++) {
+                     // $date = $movieTimes[$i]['time'];
+                     // echo "<option value=".$time.">".$time."</option>";     
+                     // }
+                  ?>
                   <option value="" class="tijdstip" selected hidden>TIJDSTIP</option>
                </select>
             </div>
@@ -109,8 +116,8 @@ $totalStars = 5;
                   </div>
                </div>
 
+               <div id="lijn1">h</div>
                <div id="ticketBox">
-                  <div id="lijn1"></div>
 
                   <div id="TicketOpties">
                      <div>Normaal</div><br>
@@ -138,7 +145,7 @@ $totalStars = 5;
                   </div>
                </div>
 
-               <div id="lijn2"></div>
+               <div id="lijn2">h</div>
 
                <div id="vouchercode">
                   <p>VOUCHERCODE</p>
@@ -160,7 +167,7 @@ $totalStars = 5;
                <?php
                for ($rij = 1; $rij <= 10; $rij++) {
                   for ($stoel = 1; $stoel <= 10; $stoel++) {
-                     echo '<div class="stoel" id="' . $rij . '-' . $stoel . '">' . $rij . '-' . $stoel . '</div>';
+                     echo '<div class="stoel" id="' . $rij . '-' . $stoel . '"></div>';
                   }
                }
                ?>
@@ -168,8 +175,8 @@ $totalStars = 5;
 
             <div id="stoelmogelijkheden">
                <div id="vrijstoel">VRIJ</div>
-               <div id="bezetstoel">BEZET</div>
                <div id="joustoel">JOUW SELECTIE</div>
+               <div id="bezetstoel">BEZET</div>
             </div>
 
             <!-- STAP 4: CONTROLE -->
@@ -238,7 +245,7 @@ $totalStars = 5;
                      <div class="form-row checkbox-row" style="align-items:center;">
                         <input type="checkbox" id="voorwaarden" name="voorwaarden" required style="margin-right:8px;">
                         <label for="voorwaarden" style="margin:0;">
-                           Ik accepteer de <a href="#" target="_blank">algemene voorwaarden</a>
+                           Ik accepteer de <a href="#" target="_blank"> algemene voorwaarden</a>
                         </label>
                      </div>
                   </div>
@@ -287,6 +294,47 @@ $totalStars = 5;
 
    <script src="stoelselect.js"></script>
 </body>
+
+<script>
+   const movieId = <?php echo $movieId ?>;
+   const datumsElement = document.querySelector('select.datums');
+   const tijdElement = document.querySelector('select.tijdstip');
+
+   datumsElement.addEventListener('change', changeTimes);
+
+   function changeTimes(){
+      const selectedDatum = datumsElement.value;
+
+      if(selectedDatum === ""){
+         return;
+      }
+
+      fetch(`https://u240066.gluwebsite.nl/api/movie/${movieId}/${selectedDatum}/times?api_key=9sJ6NKPiWw3qHmr2sZZwUNmhfDjsWfsP6A9wWfn2`)
+         .then((response) => response.json())
+         .then((data) => {
+            tijdElement.innerHTML = '';
+            
+            if(data.status != 'success'){
+               console.log('Er is een fout opgetreden');
+               return;
+            }
+
+            const times = data.data;
+
+            times.forEach(timeData => {
+               const optionElement = document.createElement('option');
+               const splittedTime = timeData.time.split(':');
+               optionElement.value = timeData.movie_screening_id;
+               optionElement.innerHTML = splittedTime[0] + ':' + splittedTime[1];
+            
+               tijdElement.appendChild(optionElement);
+            });
+         });
+   }
+
+
+   changeTimes();
+</script>
 
 <?php
 include("includes/footer.php");

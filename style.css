@@ -166,8 +166,6 @@ li .films option {
     margin-top: 40px;
     height: 250px;
     padding-left: 35px;
-    gap: 50px;
-    padding-top: 16px;
 }
 
 #welkomsblok h1 {
@@ -1230,11 +1228,6 @@ p.overview-tekst{
     width: 69%;
 }
 
-
-
-
-
-
 #witvlakbestel {
     display: flex;
     flex-direction: column;
@@ -1242,13 +1235,14 @@ p.overview-tekst{
     width: 80%;
     margin-top: 50px;
     padding: 20px;
+    margin-bottom: 70px;
 }
 
 #witvlakbestel h3 {
     color: #B97D46;
     font-size: 22px;
     font-weight: bold;
-    margin: 0px 15px 0px 15px;
+    /* margin: 0px 15px 0px 15px; */
     padding-top: 15px;
     padding-bottom: 25px;
 }
@@ -1282,6 +1276,7 @@ p.overview-tekst{
     color: #B97D46;
     border: 1px solid #B97D46;
     font-size: 15px;
+    cursor: pointer;
 }
 
 #lijn1,
@@ -1289,14 +1284,12 @@ p.overview-tekst{
     width: 100%;
     height: 2px;
     background-color: black;
-    margin-bottom: 5px;
     color: white;
 }
 
 #ticketinfolinks {
     display: flex;
     flex-direction: column;
-    height: 200px;
     justify-content: space-around;
 }
 
@@ -1326,7 +1319,7 @@ p.overview-tekst{
 #filmkeuze-info {
     background-color: white;
     width: 215px;
-    height: 40%;
+    height: 60%;
 }
 
 #ticketprijzen {
@@ -1356,6 +1349,7 @@ p.overview-tekst{
     flex-direction: column;
     justify-content: space-between;
     padding-top: 10px;
+    cursor: pointer;
 }
 
 #TicketOpties {
@@ -1391,6 +1385,7 @@ p.overview-tekst{
     color: white;
     background-color: #B97D46;
     border-color: #B97D46;
+    cursor: pointer;
 }
 
 #lijn3 {
@@ -1419,6 +1414,7 @@ p.overview-tekst{
     width: 45px;
     height: 33px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .stoelkussen {
@@ -1452,13 +1448,13 @@ p.overview-tekst{
 }
 
 #bezetstoel {
-    background-color: #B97D46;
+    background-color: #8e500b;
     width: 100px;
     height: 35px;
 }
 
 #joustoel {
-    background-color: #8e500b;
+    background-color: #B97D46;
     width: 150px;
     height: 35px;
 }
@@ -1683,14 +1679,14 @@ p.overview-tekst{
 
 .afrekenen-button {
     background-color: #B97D46;
-    width: 69%;
-    height: 7vw;
+    width: 100%;
+    /* height: 7vw; */
     color: white;
     font-size: 45px;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    margin: 2vw 0 6vw 0;
+    /* margin: 2vw 0 6vw 0; */
     /* top auto bottom auto left/right */
     display: block;
 }

@@ -202,20 +202,19 @@ $totalStars = 5;
 
                   <div class="naam-grid-container">
                      <div class="naam-grid">
-                        <input type="text" name="naam" placeholder="Achternaam" required>
-                        <input type="text" name="voor_naam" placeholder="Voornaam" required>
+                        <input type="text" name="naam" placeholder="Voornaam*" required>
+                        <input type="text" name="voor_naam" placeholder="Achternaam*" required>
                      </div>
                   </div>
                   <div class="form-row">
-                     <input type="email" name="email" placeholder="E-mail" required class="form-full">
+                     <input type="email" name="email" placeholder="E-mailadres*" required class="form-full">
                   </div>
 
-                  <!-- 🔴 DUBBEL EMAIL FORM uitgezet -->
-                  <!--
+
                   <div class="form-row">
-                     <input type="email" name="email_2" placeholder="E-mail" required class="form-full">
+                     <input type="email" name="email_2" placeholder="E-mailadres*" required class="form-full">
                   </div>
-                  -->
+                  
 
                   <p class="form-text">STAP 5: KIES JE BETAALWIJZE</p>
                   <div class="card-select-row">
@@ -233,12 +232,6 @@ $totalStars = 5;
                      </label>
                   </div>
 
-                  <!-- 🔴 DUBBELE BETALINGSMETHODES uitgezet -->
-                  <!--
-                  <div class="card-select-row">
-                     ... (zelfde code nogmaals)
-                  </div>
-                  -->
 
                   <!-- Algemene voorwaarden -->
                   <div class="voorwaarden-container">
@@ -249,18 +242,14 @@ $totalStars = 5;
                         </label>
                      </div>
                   </div>
-
-                  <input type="submit" value="AFREKENEN" class="afrekenen-button">
-               </form>
-
-               
+               </form>   
             </div>
+               <input type="submit" value="AFREKENEN" class="afrekenen-button">
          </div>
-         
       <div id="filmkeuze">
          <div class="kleine-image-container">
             <img class="kleine_image" src="https://image.tmdb.org/t/p/w500<?php echo $movieData["movie"]["poster_path"]; ?>">
-            <div id="filmkeuze">
+            <div id="filmkeuze-info">
 
 
                   <div class="informatie-film-bestelpagina">
@@ -290,7 +279,7 @@ $totalStars = 5;
                   </div>
                </div>
             </div>
-                           </div>
+            </div>
       </div>
    </div>
 

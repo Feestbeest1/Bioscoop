@@ -30,19 +30,19 @@
             <div id="line"></div>
             <div id="line"></div>
         </div>
-        <div class="box-1">
+        <div class="box">
             <label>
                 <input type="radio" name="film-filter" id="week">
                 FILMS
             </label>
         </div>
-        <div class="box-2">
+        <div class="box">
             <label>
                 <input type="radio" name="film-filter" id="week">
                 DEZE WEEK
             </label>
         </div>
-        <div class="box-3">
+        <div class="box">
             <label>
                 <input type="radio" name="film-filter" id="vandaag">
                 VANDAAG

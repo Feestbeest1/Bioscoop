@@ -38,7 +38,7 @@
             </label>
         </div>
         <label>
-        
+        <!-- <input type="radio" name="film-filter" id="categorie"> -->
         <select class="categorie-box">
             <option value="" selected>CATEGORIE</option>
             <option value="28">ACTION</option>

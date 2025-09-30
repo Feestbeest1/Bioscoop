@@ -45,7 +45,7 @@ $movieNamesData = $data['data'];
     </div>
 
     <div class="button-container">
-        <a href="http://localhost/Bioscoop/filmagenda.php">FILM AGENDA</a>
+        <a href="http://localhost/Bioscoop/filmspagina.php">FILM AGENDA</a>
         <a href="https://u240066.gluwebsite.nl/">ALLE VESTIGINGEN</a>
         <a href="index.php#contactblok">CONTACT</a>
     </div>

@@ -45,8 +45,8 @@ $movieNamesData = $data['data'];
     </div>
 
     <div class="button-container">
-        <a href="http://localhost/Bioscoop/bestelpagina.php">FILM AGENDA</a>
-        <a>ALLE VESTIGINGEN</a>
+        <a href="http://localhost/Bioscoop/filmagenda.php">FILM AGENDA</a>
+        <a href="https://u240066.gluwebsite.nl/">ALLE VESTIGINGEN</a>
         <a href="index.php#contactblok">CONTACT</a>
     </div>
 
@@ -56,7 +56,7 @@ $movieNamesData = $data['data'];
             <li>
                 <p class="text-header">KOOP JE TICKETS:</p>
             </li>
-            <li> <select class="films" onchange="goToFilm(this)">
+            <li> <select class="films">
                     <option value="">Kies je film</option>
 
                     <?php foreach ($movieNamesData as $film) {?>
@@ -67,14 +67,15 @@ $movieNamesData = $data['data'];
                     }
                     ?>
                 </select></li>
-            <li><a href="http://localhost/Bioscoop/bestelpagina.php" class="bestel-tickets">BESTEL TICKETS</a></li>
+            <li><a onclick="goToFilm()" class="bestel-tickets">BESTEL TICKETS</a></li>
         </ul>
     </div>
     <script>
-        function goToFilm(selectElement) {
-            const movieId = selectElement.value;
+        function goToFilm() {
+            const selectMovieElement = document.querySelector('select.films');
+            const movieId = selectMovieElement.value;
             if (movieId) {
-                window.location.href = "http://localhost/Bioscoop/filmdetailpagina.php?id=" + encodeURIComponent(movieId);
+                window.location.href = "http://localhost/Bioscoop/bestelpagina.php?id=" + movieId;
             }
         }
         </script>

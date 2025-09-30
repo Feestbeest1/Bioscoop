@@ -26,27 +26,15 @@ $movieData = $data['data'];
 
 curl_close($ch);
 
-    
-$movieData['movie']['warnings'] = [
-    [
-        'name' => '12 jaar',
-        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/12-jaar.png'
-    ],
-    [
-        'name' => 'Geweld',
-        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/geweld.png'
-    ],
-    [
-        'name' => 'Angst',
-        'icon' => 'https://u240066.gluwebsite.nl/public/images/warnings-icons/angst.png'
-    ],
-];
+
 
 $filledStars = round($movieData["movie"]["vote_average"] / 2);
 $stars = 5 - $filledStars;
 $totalStars = 5;
 ?>
 <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 
 <div class=film-info>
@@ -79,7 +67,7 @@ $totalStars = 5;
             }?>
         </div>
 
-
+            
         <div class="info-film">
             <div class="status">Released:&nbsp;<?php echo $movieData["movie"]["release_date"]; ?></div>
             <div class="beschrijving"><?php echo $movieData["movie"]["overview"]; ?></div>
@@ -130,7 +118,7 @@ $totalStars = 5;
     <a href="bestelpagina.php?id=<?php echo $_GET['id']?>" class="buy-button">KOOP JE TICKETS</a>
     <div class="trailer">
         <iframe
-            src="<?php echo preg_replace('/watch\?v=/', 'embed/', $movieData["movie"]["trailer_url"]); ?>"
+            src="<?php echo $movieData["movie"]["trailer_url"]; ?>"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>

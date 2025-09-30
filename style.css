@@ -231,7 +231,7 @@ li .films option {
 .google-maps {
     display: flex;
     flex-direction: column;
-    width: 650px;
+    width: 620px;
 }
 
 #googlemap {
@@ -243,7 +243,7 @@ li .films option {
     background-color: #B97D46;
     color: white;
     margin-left: 30px;
-    width: 620px;
+    width: 510px;
     height: 188px;
     font-family: 'Lato';
 }
@@ -946,6 +946,7 @@ h2{
     font-size: 17px;
     font-weight: bold;
     font-family: "Lato";
+    margin-left: 50px;
     
     
 }

@@ -203,7 +203,7 @@
 
             infoButton.addEventListener("click", () => {
 
-                window.location.href = `http://localhost/Bioscoop/filmdetailpagina.php?id=${data[i].id}`;
+                window.location.href = `https://annexbiosleerdam.gluwebsite.nl/filmdetailpagina.php?id=${data[i].id}`;
 });
   
         box.appendChild(infoButton);

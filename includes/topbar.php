@@ -30,7 +30,7 @@ $movieNamesData = $data['data'];
 
 <header>
     <div class="logo">
-        <a href="http://localhost/Bioscoop" class="overlay-button"></a>
+        <a href="https://annexbiosleerdam.gluwebsite.nl/" class="overlay-button"></a>
         <img src="img/logo.jpeg" alt="logo">
         <div class="logonaam">
             <p>AnnexBios</p>
@@ -45,7 +45,7 @@ $movieNamesData = $data['data'];
     </div>
 
     <div class="button-container">
-        <a href="http://localhost/Bioscoop/filmspagina.php">FILM AGENDA</a>
+        <a href="https://annexbiosleerdam.gluwebsite.nl//filmspagina.php">FILM AGENDA</a>
         <a href="https://u240066.gluwebsite.nl/">ALLE VESTIGINGEN</a>
         <a href="index.php#contactblok">CONTACT</a>
     </div>
@@ -75,7 +75,7 @@ $movieNamesData = $data['data'];
             const selectMovieElement = document.querySelector('select.films');
             const movieId = selectMovieElement.value;
             if (movieId) {
-                window.location.href = "http://localhost/Bioscoop/bestelpagina.php?id=" + movieId;
+                window.location.href = "https://annexbiosleerdam.gluwebsite.nl/bestelpagina.php?id=" + movieId;
             }
         }
         </script>
